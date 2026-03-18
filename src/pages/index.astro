@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Home | Reality Foundation" active="home">
+  <section class="panel">
+    <h1>RealityCheck</h1>
+    <p class="muted">
+      RealityCheck is a project to prove that selected photos are real by combining trusted mobile capture,
+      integrity checks, cryptographic hashing, and immutable records.
+    </p>
+    <p>
+      The focus is not to detect AI-generated media in general. The focus is to certify specific images with
+      verifiable evidence from capture to publication.
+    </p>
+  </section>
+
+  <section class="panel" style="margin-top: 1rem;">
+    <h2>Project Snapshot</h2>
+    <ul>
+      <li>Trusted app + device integrity verification before capture</li>
+      <li>Image and metadata hashing after capture</li>
+      <li>Blockchain-backed immutable timestamps for auditability</li>
+      <li>Verification-friendly sharing for portals and embeds</li>
+    </ul>
+  </section>
+</BaseLayout>

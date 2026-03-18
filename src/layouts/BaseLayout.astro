@@ -1,0 +1,44 @@
+---
+import "../styles/monolume.css";
+
+interface Props {
+  title: string;
+  active: "home" | "team" | "manifesto" | "careers";
+}
+
+const { title, active } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="site-header-inner">
+          <a class="brand" href="/">Reality Foundation</a>
+          <nav class="main-nav" aria-label="Main navigation">
+            <a href="/" class={active === "home" ? "active" : ""}>Home</a>
+            <a href="/team" class={active === "team" ? "active" : ""}>Team</a>
+            <a href="/manifesto" class={active === "manifesto" ? "active" : ""}>Manifesto</a>
+            <a href="/careers" class={active === "careers" ? "active" : ""}>Careers</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page">
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-inner">Monolume theme • realityfoundation.eu</div>
+      </footer>
+    </div>
+  </body>
+</html>
