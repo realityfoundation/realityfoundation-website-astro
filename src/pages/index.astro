@@ -1,3 +1,4 @@
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -154,26 +155,74 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <!-- European context -->
   <section class="section">
-    <div class="panel" style="border-left: 3px solid var(--color-primary, #01696f); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: start;">
+    <div
+      class="panel"
+      style="border-left: 3px solid #039; background: linear-gradient(180deg, rgba(0, 51, 153, 0.06) 0%, rgba(0, 51, 153, 0) 45%); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: start;"
+    >
       <div>
-        <p class="eyebrow" style="margin-bottom: var(--space-3);">European Context</p>
-        <h2 style="font-size: var(--text-lg); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: var(--space-4);">Built for the European regulatory moment</h2>
-        <p style="color: var(--mono-muted); font-size: var(--text-sm); max-width: 46ch; line-height: 1.7;">
-          The EU AI Act, the Digital Services Act, and the forthcoming Media Authenticity Regulation are creating binding obligations around synthetic media transparency. Reality Foundation is positioned to provide the independent academic grounding these frameworks require — from methodology to evidence standards.
+        <div
+          style="display: inline-flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3);"
+        >
+          <p class="eyebrow" style="margin-bottom: 0;">European Context</p>
+          <img
+            src="/eu_emblem.svg"
+            alt="European Union emblem"
+            style="width: 1.75rem; height: auto; border-radius: 2px;"
+            loading="lazy"
+          />
+        </div>
+        <h2
+          style="font-size: var(--text-lg); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: var(--space-4);"
+        >
+          Built for the European regulatory moment
+        </h2>
+        <p
+          style="color: var(--mono-muted); font-size: var(--text-sm); max-width: 46ch; line-height: 1.7;"
+        >
+          The EU AI Act, the Digital Services Act, and the forthcoming Media
+          Authenticity Regulation are creating binding obligations around
+          synthetic media transparency. Reality Foundation is positioned to
+          provide the independent academic grounding these frameworks require —
+          from methodology to evidence standards.
         </p>
+        <div style="margin-top: var(--space-7);">
+          <a
+            href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+            class="btn"
+            style="background-color: #039; border-color: #039; color: #fff;"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Read the EU AI regulatory framework</a
+          >
+        </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: var(--space-4);">
-        <div class="card" style="padding: var(--space-4) var(--space-5);">
+        <div class="card eu">
           <p class="card-eyebrow">EU AI Act</p>
-          <p style="font-size: var(--text-sm); color: var(--mono-muted); margin-top: var(--space-1);">Requires disclosure and watermarking of AI-generated content. Our research informs detection and verification methodology.</p>
+          <p
+            style="font-size: var(--text-sm); color: var(--mono-muted); margin-top: var(--space-1);"
+          >
+            Requires watermarking of AI-generated content. Our research informs
+            verification methodology.
+          </p>
         </div>
-        <div class="card" style="padding: var(--space-4) var(--space-5);">
+        <div class="card eu">
           <p class="card-eyebrow">Digital Services Act</p>
-          <p style="font-size: var(--text-sm); color: var(--mono-muted); margin-top: var(--space-1);">Mandates systemic risk assessments for synthetic media on large platforms. We provide independent academic benchmarks.</p>
+          <p
+            style="font-size: var(--text-sm); color: var(--mono-muted); margin-top: var(--space-1);"
+          >
+            Mandates risk assessments for synthetic media on platforms. We
+            provide independent benchmarks.
+          </p>
         </div>
-        <div class="card" style="padding: var(--space-4) var(--space-5);">
+        <div class="card eu">
           <p class="card-eyebrow">C2PA & Content Provenance</p>
-          <p style="font-size: var(--text-sm); color: var(--mono-muted); margin-top: var(--space-1);">We study interoperability between blockchain provenance records and emerging open standards like C2PA and IPTC.</p>
+          <p
+            style="font-size: var(--text-sm); color: var(--mono-muted); margin-top: var(--space-1);"
+          >
+            We study interoperability between blockchain records and emerging
+            open standards like C2PA and IPTC.
+          </p>
         </div>
       </div>
     </div>
