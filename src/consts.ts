@@ -1,5 +1,6 @@
 export const SITE = {
   URL: "https://realityfoundation.eu",
+  MONOGRAM: "RF",
   TITLE: "RealityFoundation",
   DESCRIPTION:
     "Research for a verifiable world. We study the boundaries between authentic and synthetic media and build the academic infrastructure to defend them.",

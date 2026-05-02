@@ -1,0 +1,153 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SITE } from "@/consts";
+---
+
+<Layout title="Research | RealityFoundation" description="Our research agenda on AI-generated counterfeits, media authenticity, and synthetic media forensics.">
+    <div class="container mx-auto px-6 pt-18">
+        <div class="space-y-20 py-12">
+            <!-- Hero Section -->
+            <section class="space-y-6">
+                <h1 class="heading text-4xl md:text-6xl uppercase">Research</h1>
+                <div class="max-w-3xl space-y-4">
+                    <p class="text-lg leading-relaxed text-secondary">
+                        The challenge of distinguishing authentic media from AI-generated counterfeits
+                        is one of the defining technical and social problems of this decade.
+                        RealityFoundation's research agenda addresses this challenge from multiple
+                        angles — technical, legal, economic, and institutional.
+                    </p>
+                    <p class="text-lg leading-relaxed text-secondary">
+                        Our work is organised around five core themes. Each theme represents an area
+                        where the absence of robust knowledge is causing real harm, and where
+                        independent research can make a meaningful contribution.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Research Themes Grid -->
+            <section class="space-y-8 border-t border-secondary pt-12">
+                <h2 class="heading text-4xl uppercase">Core themes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
+                    <!-- Proof of Reality -->
+                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                        <h3 class="heading text-2xl uppercase text-primary mb-2">Proof of reality</h3>
+                        <p class="text-base leading-relaxed text-secondary">
+                            How can we establish, at the moment of capture, that a piece of media is
+                            authentic? This theme explores cryptographic signing, device-level
+                            attestation, and blockchain-based timestamping as mechanisms for creating
+                            a verifiable chain of custody for digital images and video. We examine both
+                            the technical architecture of such systems and the legal and institutional
+                            frameworks needed to make them meaningful.
+                        </p>
+                    </div>
+
+                    <!-- Device Integrity Verification -->
+                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                        <h3 class="heading text-2xl uppercase text-primary mb-2">Device integrity verification</h3>
+                        <p class="text-base leading-relaxed text-secondary">
+                            Authentication systems are only as strong as the devices that underpin them.
+                            This theme investigates the hardware and software conditions under which a
+                            capture device can be trusted — what it means for a camera or sensor to be
+                            "integrity-verified", and how tampering or spoofing can be detected and
+                            prevented.
+                        </p>
+                    </div>
+
+                    <!-- Insurance Fraud -->
+                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                        <h3 class="heading text-2xl uppercase text-primary mb-2">Insurance fraud</h3>
+                        <p class="text-base leading-relaxed text-secondary">
+                            AI-generated imagery is already being used to fabricate insurance claims.
+                            This theme documents the scale and nature of this emerging threat, surveys
+                            the detection tools currently available to insurers, and analyses the gap
+                            between what exists and what is needed. We work to provide insurers,
+                            regulators, and policymakers with evidence-based guidance.
+                        </p>
+                    </div>
+
+                    <!-- Media Integrity and Journalism -->
+                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                        <h3 class="heading text-2xl uppercase text-primary mb-2">Media integrity & journalism</h3>
+                        <p class="text-base leading-relaxed text-secondary">
+                            Newsrooms operate under time pressure and with limited forensic capacity.
+                            This theme examines how AI-generated images and video enter media workflows,
+                            what the consequences of publication errors are, and what editorial and
+                            technical safeguards are feasible at scale. We pay particular attention to
+                            the viral dynamics of fake content and the asymmetry between the speed of
+                            fabrication and the speed of verification.
+                        </p>
+                    </div>
+
+                    <!-- Policy and Regulatory Frameworks -->
+                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                        <h3 class="heading text-2xl uppercase text-primary mb-2">Policy & regulatory frameworks</h3>
+                        <p class="text-base leading-relaxed text-secondary">
+                            Technical solutions are necessary but not sufficient. This theme analyses
+                            the policy landscape around synthetic media across European jurisdictions,
+                            identifies gaps in current regulation, and develops recommendations for
+                            legislators and public institutions.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call for Proposals Section -->
+            <section class="space-y-8 border-t border-secondary pt-12">
+                <h2 class="heading text-4xl uppercase">Call for proposals</h2>
+                <div class="max-w-3xl space-y-6">
+                    <p class="text-lg leading-relaxed text-secondary">
+                        RealityFoundation welcomes research proposals from academics, doctoral
+                        students, and independent researchers working on topics related to our core
+                        themes. We are particularly interested in proposals that combine technical
+                        rigour with policy relevance.
+                    </p>
+                    <p class="text-lg leading-relaxed text-secondary">
+                        If you are working on a thesis, research project, or publication in this space,
+                        we would like to hear from you.
+                    </p>
+                    <div>
+                        <a
+                            href="/contact"
+                            class="inline-block px-6 py-3 border border-primary text-primary font-semibold uppercase hover:bg-primary hover:text-black transition"
+                        >
+                            Submit proposal →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collaboration Section -->
+            <section class="space-y-8 border-t border-secondary pt-12">
+                <h2 class="heading text-4xl uppercase">Collaborate with us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-3">
+                        <h3 class="heading text-lg uppercase">Research opportunities</h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            We offer editorial support, cross-citation within our growing body of work,
+                            and visibility with policymakers and institutions.
+                        </p>
+                        <a
+                            href="/contact"
+                            class="inline-block text-primary font-semibold uppercase text-sm hover:underline"
+                        >
+                            Learn more →
+                        </a>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="heading text-lg uppercase">Institutional partnerships</h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            We seek partnerships with European universities and research centres for
+                            MOUs, joint initiatives, and student exchange arrangements.
+                        </p>
+                        <a
+                            href="/contact"
+                            class="inline-block text-primary font-semibold uppercase text-sm hover:underline"
+                        >
+                            Explore partnerships →
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</Layout>
