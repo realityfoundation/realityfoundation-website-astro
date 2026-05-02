@@ -1,11 +1,145 @@
 ---
-import AboutMe from "@/components/About.astro";
 import Layout from "@/layouts/Layout.astro";
 import { SITE } from "@/consts";
 ---
 
 <Layout title={SITE.TITLE} description={SITE.DESCRIPTION}>
-    <section class="pt-18">
-        <AboutMe />
-    </section>
+    <div class="container mx-auto px-6 pt-18">
+        <div class="space-y-20 py-12">
+            <!-- Mission Section -->
+            <section class="space-y-6">
+                <h1 class="heading text-4xl md:text-6xl uppercase">Our mission</h1>
+                <div class="max-w-3xl space-y-4">
+                    <p class="text-lg leading-relaxed text-secondary">
+                        RealityFoundation is an independent nonprofit research foundation
+                        established in Estonia and operating across Europe. Our mission is to
+                        advance the scientific understanding of AI-generated counterfeits —
+                        synthetic images, video, and audio produced with the intent to deceive —
+                        and to develop the knowledge base needed to detect, prevent, and mitigate
+                        their impact on society.
+                    </p>
+                    <p class="text-lg leading-relaxed text-secondary">
+                        We believe that the integrity of visual reality is a public good. As
+                        generative AI capabilities expand rapidly, the gap between what is real
+                        and what is fabricated is becoming impossible to close without dedicated,
+                        rigorous, independent research. RealityFoundation exists to close that
+                        gap.
+                    </p>
+                </div>
+            </section>
+
+            <!-- What We Do Section -->
+            <section class="space-y-8 border-t border-secondary pt-12">
+                <h2 class="heading text-4xl uppercase">What we do</h2>
+                <p class="text-lg leading-relaxed text-secondary max-w-3xl">
+                    We operate as a platform for academic research, policy analysis, and public
+                    engagement. Our work spans three areas:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="space-y-3 border border-secondary p-6 rounded-lg">
+                        <h3 class="heading text-lg uppercase">Research</h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            We commission, support, and publish original research on fake detection
+                            algorithms, synthetic media forensics, and the real-world consequences of
+                            AI counterfeiting.
+                        </p>
+                    </div>
+                    <div class="space-y-3 border border-secondary p-6 rounded-lg">
+                        <h3 class="heading text-lg uppercase">Outreach</h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            We communicate our findings to policymakers, journalists, insurers, and
+                            the broader public through accessible publications, briefings, and events.
+                        </p>
+                    </div>
+                    <div class="space-y-3 border border-secondary p-6 rounded-lg">
+                        <h3 class="heading text-lg uppercase">Community</h3>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            We bring together researchers, students, and practitioners working on the
+                            frontiers of media authenticity and AI governance.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="space-y-8 border-t border-secondary pt-12">
+                <h2 class="heading text-4xl uppercase">Our team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+                    <div class="space-y-3 border border-secondary p-6 rounded-lg">
+                        <h3 class="heading text-xl uppercase">Emilio Dalla Torre</h3>
+                        <p class="text-sm text-primary font-semibold uppercase">
+                            Co-founder, technology lead
+                        </p>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            Emilio holds a background in Engineering Physics and is completing a
+                            Double Degree Master in HPC Engineering and ICT Innovation at Politecnico
+                            di Milano and KTH Royal Institute of Technology. He has worked across
+                            full-stack engineering, AI systems, and large-scale infrastructure at PwC,
+                            Accenture, and Qualcomm. He leads RealityFoundation's technical research
+                            agenda and systems architecture.
+                        </p>
+                    </div>
+                    <div class="space-y-3 border border-secondary p-6 rounded-lg">
+                        <h3 class="heading text-xl uppercase">Bianca Illing</h3>
+                        <p class="text-sm text-primary font-semibold uppercase">
+                            Co-founder, research lead
+                        </p>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            Bianca holds an MSc in Economics from Nova SBE and a BSc in Business
+                            Administration from ESCP. She has worked in strategy consulting and is
+                            currently Founder's Associate at greenmetrics.ai, where she focuses on AI
+                            applications for climate resilience. She leads RealityFoundation's research
+                            programme and academic partnerships.
+                        </p>
+                    </div>
+                    <div class="space-y-3 border border-secondary p-6 rounded-lg">
+                        <h3 class="heading text-xl uppercase">Gaia Dalla Zonca</h3>
+                        <p class="text-sm text-primary font-semibold uppercase">
+                            Co-founder, operations lead
+                        </p>
+                        <p class="text-sm leading-relaxed text-secondary">
+                            Gaia holds a CEMS Master in International Management from Nova SBE and
+                            FGV-EAESP, and a Bachelor in International Politics and Government from
+                            Bocconi University. She currently works at EY. She leads RealityFoundation's
+                            operations, governance, and institutional relationships.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scientific Committee Section -->
+            <section class="space-y-6 border-t border-secondary pt-12">
+                <h2 class="heading text-4xl uppercase">Scientific committee</h2>
+                <div class="max-w-3xl space-y-4">
+                    <p class="text-lg leading-relaxed text-secondary">
+                        RealityFoundation is governed by an independent Scientific Committee
+                        responsible for ensuring the rigour, integrity, and independence of our
+                        research output. The committee is currently being formed. We are in conversation
+                        with researchers and academics specialising in computer vision, AI ethics,
+                        digital forensics, and media law.
+                    </p>
+                    <p class="text-sm italic text-secondary">Announcements forthcoming.</p>
+                </div>
+            </section>
+
+            <!-- Research Roadmap Section -->
+            <section class="space-y-6 border-t border-secondary pt-12">
+                <h2 class="heading text-4xl uppercase">Research roadmap</h2>
+                <div class="max-w-3xl space-y-4">
+                    <p class="text-lg leading-relaxed text-secondary">
+                        We are building a multi-year research agenda structured around our core
+                        themes. Our roadmap — currently in development — will be published in full
+                        on this site. We welcome enquiries from researchers and institutions
+                        interested in contributing to or shaping our programme.
+                    </p>
+                    <a
+                        href="#research"
+                        class="inline-block text-primary font-semibold uppercase hover:underline"
+                    >
+                        See our research themes →
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
 </Layout>
