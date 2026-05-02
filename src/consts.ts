@@ -1,33 +1,33 @@
 export const SITE = {
-  URL: "https://your_site.com",
-  TITLE: "Mono Lume",
+  URL: "https://realityfoundation.eu",
+  TITLE: "RealityFoundation",
   DESCRIPTION:
-    "A full-stack developer with a strong focus on building fast, accessible, and maintainable web applications.",
-  EMAIL: "hi@monolume.com",
+    "Research for a verifiable world. We study the boundaries between authentic and synthetic media and build the academic infrastructure to defend them.",
+  EMAIL: "hello@realityfoundation.eu",
 };
 
 export const HOME = {
-  TITLE: "Home",
+  TITLE: "RealityFoundation - Research for a verifiable world",
   DESCRIPTION:
-    "A personal blog about coding, building projects, and figuring things out",
+    "We study the boundaries between authentic and synthetic media — and build the academic infrastructure to defend them.",
 };
 
 export const BLOG = {
   TITLE: "Blog",
   DESCRIPTION:
-    "A collection of articles on programming, projects and other stuff",
+    "A collection of articles on synthetic media, AI governance, and media authenticity research",
 };
 
 export const PROJECTS = {
   TITLE: "Projects",
   DESCRIPTION:
-    "A collection of my projects with links to repositories and live demos.",
+    "Our research initiatives and projects on media authenticity and deepfake detection.",
 };
 
 export const SOCIALS = [
   {
     NAME: "X",
-    HREF: "https://x.com/your_username",
+    HREF: "https://x.com/realitychecked",
   },
   {
     NAME: "Linkedin",
@@ -35,6 +35,6 @@ export const SOCIALS = [
   },
   {
     NAME: "Github",
-    HREF: "https://github.com/your_username",
+    HREF: "https://github.com/realitycheck",
   },
 ];
