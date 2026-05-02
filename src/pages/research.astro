@@ -3,8 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Research | RealityFoundation" active="research">
-  <div class="page-header">
-    <p class="eyebrow">Research</p>
+  <div class="pb-8 border-b mb-10" style="border-color: var(--color-line);">
+    <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Research</p>
     <h1>Research Programme</h1>
     <p>
       Our work is organised into four interconnected themes, each addressing a
@@ -15,12 +15,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 
   <!-- Theme 01 -->
-  <section class="section" id="proof-of-reality">
+  <section class="mb-16" id="proof-of-reality">
     <div
       style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:var(--space-6); flex-wrap:wrap; gap:var(--space-2);"
     >
       <div>
-        <p class="eyebrow">Theme 01</p>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Theme 01</p>
         <h2
           style="font-size:var(--text-xl); letter-spacing:0.04em; text-transform:uppercase;"
         >
@@ -29,8 +29,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <span class="tag">Active</span>
     </div>
-    <div class="layout-aside" style="grid-template-columns:1fr 340px;">
-      <div class="prose">
+    <div class="grid gap-12 items-start" style="grid-template-columns: 220px 1fr; padding-top: 1rem;" style="grid-template-columns:1fr 340px;">
+      <div class="max-w-3xl">
         <p>
           The central question of our programme: <strong
             >what constitutes proof that a digital image was captured from
@@ -81,15 +81,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
   <!-- Theme 02 -->
-  <section class="section" id="nft-timestamping">
+  <section class="mb-16" id="nft-timestamping">
     <div
       style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:var(--space-6); flex-wrap:wrap; gap:var(--space-2);"
     >
       <div>
-        <p class="eyebrow">Theme 02</p>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Theme 02</p>
         <h2
           style="font-size:var(--text-xl); letter-spacing:0.04em; text-transform:uppercase;"
         >
@@ -98,8 +98,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <span class="tag">Active</span>
     </div>
-    <div class="layout-aside" style="grid-template-columns:1fr 340px;">
-      <div class="prose">
+    <div class="grid gap-12 items-start" style="grid-template-columns: 220px 1fr; padding-top: 1rem;" style="grid-template-columns:1fr 340px;">
+      <div class="max-w-3xl">
         <p>
           Blockchain-based timestamps are among the most robust mechanisms for
           establishing temporal precedence of a digital record. This theme
@@ -148,15 +148,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
   <!-- Theme 03 -->
-  <section class="section" id="insurance-fraud">
+  <section class="mb-16" id="insurance-fraud">
     <div
       style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:var(--space-6); flex-wrap:wrap; gap:var(--space-2);"
     >
       <div>
-        <p class="eyebrow">Theme 03</p>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Theme 03</p>
         <h2
           style="font-size:var(--text-xl); letter-spacing:0.04em; text-transform:uppercase;"
         >
@@ -165,8 +165,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <span class="tag">Active</span>
     </div>
-    <div class="layout-aside" style="grid-template-columns:1fr 340px;">
-      <div class="prose">
+    <div class="grid gap-12 items-start" style="grid-template-columns: 220px 1fr; padding-top: 1rem;" style="grid-template-columns:1fr 340px;">
+      <div class="max-w-3xl">
         <p>
           Insurance fraud involving manipulated or AI-generated imagery
           represents a rapidly growing category of financial crime. This theme
@@ -214,15 +214,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
   <!-- Theme 04 -->
-  <section class="section" id="deepfake-forensics">
+  <section class="mb-16" id="deepfake-forensics">
     <div
       style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:var(--space-6); flex-wrap:wrap; gap:var(--space-2);"
     >
       <div>
-        <p class="eyebrow">Theme 04</p>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Theme 04</p>
         <h2
           style="font-size:var(--text-xl); letter-spacing:0.04em; text-transform:uppercase;"
         >
@@ -231,8 +231,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <span class="tag">Scoping</span>
     </div>
-    <div class="layout-aside" style="grid-template-columns:1fr 340px;">
-      <div class="prose">
+    <div class="grid gap-12 items-start" style="grid-template-columns: 220px 1fr; padding-top: 1rem;" style="grid-template-columns:1fr 340px;">
+      <div class="max-w-3xl">
         <p>
           Detection methods for synthetic media age rapidly as generative models
           improve. This theme develops <strong
@@ -278,9 +278,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- Collaborate CTA -->
-  <section class="section">
+  <section class="mb-16">
     <div class="panel" style="padding:2rem 2.5rem;">
-      <p class="eyebrow">Collaborate</p>
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Collaborate</p>
       <h2
         style="font-size:var(--text-lg); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:var(--space-3);"
       >

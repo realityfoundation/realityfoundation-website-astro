@@ -3,8 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Blog | RealityFoundation" active="blog">
-  <div class="page-header">
-    <p class="eyebrow">Blog</p>
+  <div class="pb-8 border-b mb-10" style="border-color: var(--color-line);">
+    <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Blog</p>
     <h1>Notes & Commentary</h1>
     <p>
       Shorter-form writing from the team: research notes, commentary on
@@ -24,7 +24,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 
   <!-- Empty state -->
-  <div class="empty-state">
+  <div class="flex flex-col items-center text-center py-20 px-8 border-2 border-dashed rounded-lg" style="color: var(--color-muted); border-color: var(--color-line);">
     <div style="font-size:2rem; margin-bottom:var(--space-4); opacity:0.4;">
       &#9632;
     </div>
@@ -38,11 +38,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 
   <!-- What to expect -->
-  <section class="section" style="margin-top:var(--space-16);">
-    <div class="section-header">
+  <section class="mb-16" style="margin-top:var(--space-16);">
+    <div class="mb-8">
       <h2>What you will find here</h2>
     </div>
-    <div class="grid-3">
+    <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));">
       <div class="card">
         <p class="card-eyebrow">Research notes</p>
         <h3>Behind the work</h3>

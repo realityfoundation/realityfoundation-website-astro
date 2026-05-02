@@ -1,5 +1,4 @@
 ---
-import "../styles/monolume.css";
 import "../styles/global.css";
 
 interface Props {
@@ -34,10 +33,10 @@ const { title, active } = Astro.props;
     </script>
   </head>
   <body>
-    <div class="site-shell">
-      <header class="site-header">
-        <div class="site-header-inner">
-          <a class="brand" href="/">
+    <div class="min-h-dvh grid" style="grid-template-rows: auto 1fr auto;">
+      <header class="sticky top-0 z-100 border-b backdrop-blur-lg" style="background: color-mix(in srgb, var(--color-background) 88%, black 12%); border-color: var(--color-line);">
+        <div class="mx-auto flex items-center justify-between gap-4 py-3 px-5" style="max-width: 1040px;">
+          <a class="flex items-center gap-0 whitespace-nowrap font-bold text-sm uppercase tracking-wider no-underline" style="color: var(--color-accent); transition: opacity 160ms; cursor: pointer;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'" href="/">
             <svg
               aria-label="RealityFoundation"
               viewBox="0 0 32 32"
@@ -69,27 +68,19 @@ const { title, active } = Astro.props;
             </svg>
             RealityFoundation
           </a>
-          <nav class="main-nav" aria-label="Main navigation">
+          <nav class="main-nav flex flex-wrap items-center gap-1" aria-label="Main navigation">
             <a href="/" class={active === "home" ? "active" : ""}>Home</a>
-            <a href="/about" class={active === "about" ? "active" : ""}>About</a
-            >
-            <a href="/research" class={active === "research" ? "active" : ""}
-              >Research</a
-            >
-            <a
-              href="/publications"
-              class={active === "publications" ? "active" : ""}>Publications</a
-            >
+            <a href="/about" class={active === "about" ? "active" : ""}>About</a>
+            <a href="/research" class={active === "research" ? "active" : ""}>Research</a>
+            <a href="/publications" class={active === "publications" ? "active" : ""}>Publications</a>
             <a href="/blog" class={active === "blog" ? "active" : ""}>Blog</a>
-            <a
-              href="/get-involved"
-              class={active === "get-involved" ? "active" : ""}>Get Involved</a
-            >
+            <a href="/get-involved" class={active === "get-involved" ? "active" : ""}>Get Involved</a>
           </nav>
           <button
-            class="nav-toggle"
+            class="nav-toggle hidden rounded-sm p-0.5"
+            style="color: var(--color-muted);"
             aria-label="Toggle navigation"
-            onclick="this.closest('.site-header').querySelector('.main-nav').classList.toggle('open')"
+            onclick="this.closest('header').querySelector('.main-nav').classList.toggle('open')"
           >
             <svg
               width="20"
@@ -107,19 +98,19 @@ const { title, active } = Astro.props;
         </div>
       </header>
 
-      <main class="page">
+      <main class="mx-auto w-full px-5" style="max-width: 1040px; padding-top: 3rem; padding-bottom: 5rem;">
         <slot />
       </main>
 
-      <footer class="site-footer">
-        <div class="site-footer-inner">
-          <span class="footer-brand">RealityFoundation</span>
-          <span class="footer-links">
-            <a href="/about">About</a>
-            <a href="/research">Research</a>
-            <a href="/get-involved">Get Involved</a>
+      <footer class="border-t" style="border-color: var(--color-line); color: var(--color-muted);">
+        <div class="mx-auto flex flex-wrap items-center justify-between gap-4 px-5 py-4" style="max-width: 1040px; font-size: var(--text-xs);">
+          <span class="font-bold uppercase tracking-wider" style="color: var(--color-foreground);">RealityFoundation</span>
+          <span class="flex gap-4">
+            <a href="/about" class="no-underline transition-colors" style="color: var(--color-muted);">About</a>
+            <a href="/research" class="no-underline transition-colors" style="color: var(--color-muted);">Research</a>
+            <a href="/get-involved" class="no-underline transition-colors" style="color: var(--color-muted);">Get Involved</a>
           </span>
-          <span class="footer-copy">realityfoundation.eu</span>
+          <span style="color: var(--color-muted);">realityfoundation.eu</span>
         </div>
       </footer>
     </div>

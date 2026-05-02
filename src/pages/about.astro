@@ -3,8 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About | RealityFoundation" active="about">
-  <div class="page-header">
-    <p class="eyebrow">About</p>
+  <div class="pb-8 border-b mb-10" style="border-color: var(--color-line);">
+    <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">About</p>
     <h1>RealityFoundation</h1>
     <p>
       An independent European research foundation dedicated to the study of
@@ -13,7 +13,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
   </div>
 
-  <div class="layout-aside">
+  <div class="grid gap-12 items-start" style="grid-template-columns: 220px 1fr; padding-top: 1rem;">
     <nav class="aside-sticky aside-nav" aria-label="Page sections">
       <a href="#mission" class="nav-link active">Mission</a>
       <a href="#values" class="nav-link">Values</a>
@@ -23,13 +23,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </nav>
 
     <div>
-      <section id="mission" class="section">
+      <section id="mission" class="mb-16">
         <h2
           style="font-size:var(--text-lg); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:var(--space-6);"
         >
           Mission
         </h2>
-        <div class="prose">
+        <div class="max-w-3xl">
           <p>
             RealityFoundation exists to produce independent, peer-reviewed
             research at the intersection of digital media, cryptography, and
@@ -54,15 +54,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </section>
 
-      <hr class="divider" />
+      <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
-      <section id="values" class="section">
+      <section id="values" class="mb-16">
         <h2
           style="font-size:var(--text-lg); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:var(--space-6);"
         >
           Values
         </h2>
-        <div class="grid-2">
+        <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));">
           <div class="card">
             <h3>Independence</h3>
             <p>
@@ -96,15 +96,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </section>
 
-      <hr class="divider" />
+      <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
-      <section id="structure" class="section">
+      <section id="structure" class="mb-16">
         <h2
           style="font-size:var(--text-lg); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:var(--space-6);"
         >
           Structure
         </h2>
-        <div class="prose">
+        <div class="max-w-3xl">
           <p>
             RealityFoundation is incorporated as an independent non-profit
             foundation under European law. It is governed by a <strong
@@ -131,15 +131,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </section>
 
-      <hr class="divider" />
+      <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
-      <section id="team" class="section">
+      <section id="team" class="mb-16">
         <h2
           style="font-size:var(--text-lg); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:var(--space-6);"
         >
           Founding Team
         </h2>
-        <div class="grid-2">
+        <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));">
           <div class="card">
             <p class="card-eyebrow">Co-founder</p>
             <h3>Emilio Dalla Torre</h3>
@@ -168,15 +168,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
 
       <!--
-      <hr class="divider" />
+      <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
-      <section id="realitycheck" class="section">
+      <section id="realitycheck" class="mb-16">
         <h2
           style="font-size:var(--text-lg); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:var(--space-6);"
         >
           Relationship with RealityCheck
         </h2>
-        <div class="prose">
+        <div class="max-w-3xl">
           <p>
             RealityCheck is a consumer and professional application that allows
             users to capture images and store cryptographic proofs on the

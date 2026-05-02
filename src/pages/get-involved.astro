@@ -3,8 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Get Involved | RealityFoundation" active="get-involved">
-  <div class="page-header">
-    <p class="eyebrow">Get Involved</p>
+  <div class="pb-8 border-b mb-10" style="border-color: var(--color-line);">
+    <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Get Involved</p>
     <h1>Join the effort</h1>
     <p>
       RealityFoundation is a small team with a large research agenda. We need
@@ -14,10 +14,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 
   <!-- Audience cards -->
-  <section class="section">
-    <div class="grid-2">
-      <div class="involve-card">
-        <p class="eyebrow">For researchers</p>
+  <section class="mb-16">
+    <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));">
+      <div class="border rounded-lg p-8 flex flex-col gap-4" style="border-color: var(--color-line); background: color-mix(in srgb, var(--color-background-soft) 90%, black 10%);">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">For researchers</p>
         <h3>Academic collaboration</h3>
         <p style="color:var(--mono-muted); font-size:var(--text-sm);">
           We are actively seeking co-researchers and advisors across computer
@@ -34,8 +34,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >
       </div>
 
-      <div class="involve-card">
-        <p class="eyebrow">For students</p>
+      <div class="border rounded-lg p-8 flex flex-col gap-4" style="border-color: var(--color-line); background: color-mix(in srgb, var(--color-background-soft) 90%, black 10%);">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">For students</p>
         <h3>Thesis & internship</h3>
         <p style="color:var(--mono-muted); font-size:var(--text-sm);">
           We work with MSc and PhD candidates whose dissertations touch on our
@@ -54,8 +54,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >
       </div>
 
-      <div class="involve-card">
-        <p class="eyebrow">For policymakers</p>
+      <div class="border rounded-lg p-8 flex flex-col gap-4" style="border-color: var(--color-line); background: color-mix(in srgb, var(--color-background-soft) 90%, black 10%);">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">For policymakers</p>
         <h3>Policy engagement</h3>
         <p style="color:var(--mono-muted); font-size:var(--text-sm);">
           We produce policy-facing outputs and welcome dialogue with regulators,
@@ -72,8 +72,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >
       </div>
 
-      <div class="involve-card">
-        <p class="eyebrow">For journalists</p>
+      <div class="border rounded-lg p-8 flex flex-col gap-4" style="border-color: var(--color-line); background: color-mix(in srgb, var(--color-background-soft) 90%, black 10%);">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">For journalists</p>
         <h3>Press & media</h3>
         <p style="color:var(--mono-muted); font-size:var(--text-sm);">
           We are available for expert comment, technical explanation, and
@@ -93,11 +93,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
   <!-- Industry partners -->
-  <section class="section">
-    <div class="section-header">
+  <section class="mb-16">
+    <div class="mb-8">
       <h2>Industry & Institutional Partners</h2>
       <p>
         We work with organisations that can contribute data, funding, or domain
@@ -105,7 +105,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         independence.
       </p>
     </div>
-    <div class="prose">
+    <div class="max-w-3xl">
       <p>
         If your organisation handles digital media at scale — insurers, media
         publishers, legal firms, platform operators — you may have datasets or
@@ -125,12 +125,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <hr class="divider" />
+  <hr class="border-none border-t my-8" style="border-color: var(--color-line);" />
 
   <!-- Newsletter -->
-  <section class="section">
+  <section class="mb-16">
     <div class="panel" style="max-width:540px;">
-      <p class="eyebrow">Stay informed</p>
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest" style="color: var(--color-muted);">Stay informed</p>
       <h2
         style="font-size:var(--text-lg); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:var(--space-3);"
       >
