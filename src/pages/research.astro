@@ -27,30 +27,32 @@ import { SITE } from "@/consts";
             <!-- Research Themes Grid -->
             <section class="space-y-8 border-t border-secondary pt-12">
                 <h2 class="heading text-4xl uppercase">Core themes</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
-                    <!-- Proof of Reality -->
-                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
-                        <h3 class="heading text-2xl uppercase text-primary mb-2">Proof of reality</h3>
-                        <p class="text-base leading-relaxed text-secondary">
-                            How can we establish, at the moment of capture, that a piece of media is
-                            authentic? This theme explores cryptographic signing, device-level
-                            attestation, and blockchain-based timestamping as mechanisms for creating
-                            a verifiable chain of custody for digital images and video. We examine both
-                            the technical architecture of such systems and the legal and institutional
-                            frameworks needed to make them meaningful.
-                        </p>
-                    </div>
+                <div class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Proof of Reality -->
+                        <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                            <h3 class="heading text-2xl uppercase text-primary mb-2">Proof of reality</h3>
+                            <p class="text-base leading-relaxed text-secondary">
+                                How can we establish, at the moment of capture, that a piece of media is
+                                authentic? This theme explores cryptographic signing, device-level
+                                attestation, and blockchain-based timestamping as mechanisms for creating
+                                a verifiable chain of custody for digital images and video. We examine both
+                                the technical architecture of such systems and the legal and institutional
+                                frameworks needed to make them meaningful.
+                            </p>
+                        </div>
 
-                    <!-- Device Integrity Verification -->
-                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
-                        <h3 class="heading text-2xl uppercase text-primary mb-2">Device integrity verification</h3>
-                        <p class="text-base leading-relaxed text-secondary">
-                            Authentication systems are only as strong as the devices that underpin them.
-                            This theme investigates the hardware and software conditions under which a
-                            capture device can be trusted — what it means for a camera or sensor to be
-                            "integrity-verified", and how tampering or spoofing can be detected and
-                            prevented.
-                        </p>
+                        <!-- Device Integrity Verification -->
+                        <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                            <h3 class="heading text-2xl uppercase text-primary mb-2">Device integrity verification</h3>
+                            <p class="text-base leading-relaxed text-secondary">
+                                Authentication systems are only as strong as the devices that underpin them.
+                                This theme investigates the hardware and software conditions under which a
+                                capture device can be trusted — what it means for a camera or sensor to be
+                                "integrity-verified", and how tampering or spoofing can be detected and
+                                prevented.
+                            </p>
+                        </div>
                     </div>
 
                     <!-- Insurance Fraud -->
@@ -65,28 +67,30 @@ import { SITE } from "@/consts";
                         </p>
                     </div>
 
-                    <!-- Media Integrity and Journalism -->
-                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
-                        <h3 class="heading text-2xl uppercase text-primary mb-2">Media integrity & journalism</h3>
-                        <p class="text-base leading-relaxed text-secondary">
-                            Newsrooms operate under time pressure and with limited forensic capacity.
-                            This theme examines how AI-generated images and video enter media workflows,
-                            what the consequences of publication errors are, and what editorial and
-                            technical safeguards are feasible at scale. We pay particular attention to
-                            the viral dynamics of fake content and the asymmetry between the speed of
-                            fabrication and the speed of verification.
-                        </p>
-                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Media Integrity and Journalism -->
+                        <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                            <h3 class="heading text-2xl uppercase text-primary mb-2">Media integrity & journalism</h3>
+                            <p class="text-base leading-relaxed text-secondary">
+                                Newsrooms operate under time pressure and with limited forensic capacity.
+                                This theme examines how AI-generated images and video enter media workflows,
+                                what the consequences of publication errors are, and what editorial and
+                                technical safeguards are feasible at scale. We pay particular attention to
+                                the viral dynamics of fake content and the asymmetry between the speed of
+                                fabrication and the speed of verification.
+                            </p>
+                        </div>
 
-                    <!-- Policy and Regulatory Frameworks -->
-                    <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
-                        <h3 class="heading text-2xl uppercase text-primary mb-2">Policy & regulatory frameworks</h3>
-                        <p class="text-base leading-relaxed text-secondary">
-                            Technical solutions are necessary but not sufficient. This theme analyses
-                            the policy landscape around synthetic media across European jurisdictions,
-                            identifies gaps in current regulation, and develops recommendations for
-                            legislators and public institutions.
-                        </p>
+                        <!-- Policy and Regulatory Frameworks -->
+                        <div class="border border-secondary p-8 rounded-lg hover:border-primary transition">
+                            <h3 class="heading text-2xl uppercase text-primary mb-2">Policy & regulatory frameworks</h3>
+                            <p class="text-base leading-relaxed text-secondary">
+                                Technical solutions are necessary but not sufficient. This theme analyses
+                                the policy landscape around synthetic media across European jurisdictions,
+                                identifies gaps in current regulation, and develops recommendations for
+                                legislators and public institutions.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -108,7 +112,7 @@ import { SITE } from "@/consts";
                     <div>
                         <a
                             href="/get-involved"
-                            class="inline-block px-6 py-3 border border-primary text-primary font-semibold uppercase hover:bg-primary hover:text-button-text transition"
+                            class="inline-block px-6 py-3 border border-primary text-primary font-semibold uppercase rounded-2xl hover:bg-primary hover:text-button-text transition"
                         >
                             Submit proposal →
                         </a>

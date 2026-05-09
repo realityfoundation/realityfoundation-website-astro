@@ -6,22 +6,34 @@
 
 :root {
   /* light mode colors */
-  --color-primary: #27FF0B;
+  --lavender-veil: #e3d8f1ff;
+  --slate-blue: #6665ddff;
+  --graphite: #2f2f2fff;
+  --berry-lipstick: #d90368ff;
+
+  --color-primary: var(--berry-lipstick);
   --color-background: #fefefe;
-  --color-foreground: #000000;
-  --color-secondary: #434343;
-  --color-button-text: #333333;
+  --color-foreground: var(--graphite);
+  --color-secondary: var(--graphite);
+  --color-button-text: #fefefe;
+  --color-button-text-hover: var(--graphite);
   --color-light-grey: #f5f5f5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* dark mode colors */
-    --color-primary: #27FF0B;
-    --color-background: #1a1a1a;
+    --lavender-veil: #e3d8f1ff;
+    --slate-blue: #6665ddff;
+    --graphite: #2f2f2fff;
+    --berry-lipstick: #d90368ff;
+
+    --color-primary: var(--berry-lipstick);
+    --color-background: #0b0b0b;
     --color-foreground: #fefefe;
     --color-secondary: #999999;
-    --color-button-text: #1a1a1a;
+    --color-button-text: #fefefe;
+    --color-button-text-hover: #fefefe;
     --color-light-grey: #2a2a2a;
   }
 }
@@ -61,12 +73,6 @@ article {
 
 .btn-primary:hover {
   background-color: var(--color-background);
-  color: var(--color-button-text);
+  color: var(--color-button-text-hover);
   outline: 1px dashed var(--color-secondary);
-}
-
-@media (prefers-color-scheme: dark) {
-  .btn-primary:hover {
-    color: var(--color-foreground);
-  }
 }
