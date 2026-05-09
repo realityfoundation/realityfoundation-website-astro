@@ -1,0 +1,16 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="relative py-16" style="background-image: url('data:image/svg+xml;utf8,<svg viewBox=%220 0 100 100%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M0,40 Q12,30 25,40 T50,40 T75,40 T100,40%22 stroke=%22%23e3d8f1%22 stroke-width=%221.5%22 fill=%22none%22/><path d=%22M0,60 Q12,50 25,60 T50,60 T75,60 T100,60%22 stroke=%22%23e3d8f1%22 stroke-width=%221.5%22 fill=%22none%22/></svg>'); background-size: 100px 100px; background-repeat: repeat;">
+  <div class="relative z-10 container mx-auto px-6">
+    {title && <h3 class="heading text-2xl uppercase mb-4">{title}</h3>}
+    {description && <p class="text-secondary leading-relaxed">{description}</p>}
+    <slot />
+  </div>
+</div>
