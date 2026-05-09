@@ -1,6 +1,4 @@
 ---
-import { SITE } from "@/consts";
-
 const links = [
     { name: "Home", href: "/", target: "_self" },
     { name: "About", href: "/about", target: "_self" },
@@ -14,9 +12,9 @@ const links = [
     class="fixed top-0 w-full z-50 border-b border-secondary/15 bg-background/65 backdrop-blur-xs backdrop-saturate-150"
 >
     <div class="container mx-auto flex items-center justify-between p-6">
-        <a href="/" class="font-bold font-plex text-4xl"
-            >{SITE.MONOGRAM}</a
-        >
+        <a href="/" class="inline-flex items-center" aria-label="RealityFoundation home">
+            <img src="/logo.png" alt="RealityFoundation logo" class="h-10 w-auto" />
+        </a>
         <nav class="space-x-3 text-secondary hidden md:block">
             {
                 links.map((link) => (
