@@ -104,6 +104,111 @@ import { HOME } from "@/consts";
 
             </section>
 
+            <!-- Section B: How it works -->
+            <section id="how-it-works" class="space-y-8">
+                <div class="space-y-4">
+                    <p class="font-geist text-secondary text-sm uppercase tracking-wider">How it works</p>
+                    <h2 class="heading text-3xl uppercase md:text-4xl">From capture to certificate — in under a second</h2>
+                    <p class="text-lg text-secondary leading-relaxed max-w-3xl">
+                        A high-level look at the certification process. An interactive demo is coming with our MVP.
+                    </p>
+                </div>
+
+                <!-- Four-step flow -->
+                <div class="flex flex-col gap-8 md:flex-row md:items-start md:gap-2">
+
+                    <!-- Step 01: Capture -->
+                    <div class="flex-1 space-y-3">
+                        <div class="text-primary">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="10" width="26" height="17" rx="2"/>
+                                <circle cx="16" cy="18" r="4"/>
+                                <path d="M21 10V8a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1v2"/>
+                            </svg>
+                        </div>
+                        <p class="font-geist text-xs uppercase tracking-wider text-secondary">Step 01</p>
+                        <h3 class="heading text-lg uppercase">Capture</h3>
+                        <p class="text-sm leading-relaxed text-secondary">Raw media and its metadata — timestamp, GPS, device fingerprint — are collected the instant the shutter clicks.</p>
+                    </div>
+
+                    <!-- Step arrow -->
+                    <div class="hidden md:flex items-start pt-4 flex-shrink-0 text-primary/30">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="3" y1="10" x2="17" y2="10"/>
+                            <polyline points="13,6 17,10 13,14"/>
+                        </svg>
+                    </div>
+
+                    <!-- Step 02: Hash -->
+                    <div class="flex-1 space-y-3">
+                        <div class="text-primary">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="10" y1="5" x2="8" y2="27"/>
+                                <line x1="22" y1="5" x2="20" y2="27"/>
+                                <line x1="5" y1="12" x2="27" y2="12"/>
+                                <line x1="5" y1="20" x2="27" y2="20"/>
+                            </svg>
+                        </div>
+                        <p class="font-geist text-xs uppercase tracking-wider text-secondary">Step 02</p>
+                        <h3 class="heading text-lg uppercase">Hash</h3>
+                        <p class="text-sm leading-relaxed text-secondary">A cryptographic hash of the capture is generated instantly — unique to that exact file and its metadata.</p>
+                    </div>
+
+                    <!-- Step arrow -->
+                    <div class="hidden md:flex items-start pt-4 flex-shrink-0 text-primary/30">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="3" y1="10" x2="17" y2="10"/>
+                            <polyline points="13,6 17,10 13,14"/>
+                        </svg>
+                    </div>
+
+                    <!-- Step 03: Anchor -->
+                    <div class="flex-1 space-y-3">
+                        <div class="text-primary">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 20L20 12"/>
+                                <path d="M9 15l-2 2a5 5 0 0 0 7.07 7.07l2-2"/>
+                                <path d="M23 17l2-2a5 5 0 0 0-7.07-7.07l-2 2"/>
+                            </svg>
+                        </div>
+                        <p class="font-geist text-xs uppercase tracking-wider text-secondary">Step 03</p>
+                        <h3 class="heading text-lg uppercase">Anchor</h3>
+                        <p class="text-sm leading-relaxed text-secondary">The hash is signed and written to a public blockchain, with the underlying content stored on IPFS.</p>
+                    </div>
+
+                    <!-- Step arrow -->
+                    <div class="hidden md:flex items-start pt-4 flex-shrink-0 text-primary/30">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="3" y1="10" x2="17" y2="10"/>
+                            <polyline points="13,6 17,10 13,14"/>
+                        </svg>
+                    </div>
+
+                    <!-- Step 04: Certify -->
+                    <div class="flex-1 space-y-3">
+                        <div class="text-primary">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M16 3L4 8v7c0 7 5 11.5 12 14 7-2.5 12-7 12-14V8L16 3z"/>
+                                <polyline points="11,16 14,21 22,12"/>
+                            </svg>
+                        </div>
+                        <p class="font-geist text-xs uppercase tracking-wider text-secondary">Step 04</p>
+                        <h3 class="heading text-lg uppercase">Certify</h3>
+                        <p class="text-sm leading-relaxed text-secondary">The result is a permanent, tamper-proof certificate of authenticity — natively compatible with C2PA.</p>
+                    </div>
+
+                </div>
+
+                <!-- Placeholder callout -->
+                <div class="flex justify-center pt-4">
+                    <span class="inline-flex items-center gap-2 border border-dashed border-secondary/40 rounded-full px-6 py-2 font-geist text-xs text-secondary/60 uppercase tracking-wider">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-primary/40 flex-shrink-0"></span>
+                        Interactive demo coming soon
+                    </span>
+                </div>
+
+            </section>
+
             <section id="research" class="space-y-8">
                 <div class="space-y-4">
                     <h2 class="heading text-3xl uppercase md:text-4xl">Research themes</h2>
