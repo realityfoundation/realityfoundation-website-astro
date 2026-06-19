@@ -2,28 +2,24 @@
 import { SITE } from "@/consts";
 ---
 
-<footer class="container mx-auto border-t border-secondary px-6 py-12">
-  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-sm text-secondary">
+<footer class="border-secondary container mx-auto border-t px-6 py-12">
+  <div
+    class="text-secondary flex flex-col items-start justify-between gap-6 text-sm sm:flex-row sm:items-center"
+  >
     <p>© {new Date().getFullYear()} {SITE.TITLE}</p>
-    <a href="mailto:{SITE.EMAIL}" class="hover:text-primary transition">{SITE.EMAIL}</a>
-  </div>
-  <div class="flex items-center gap-3 pt-6 border-t border-secondary/10 mt-6">
-    <a href="/donate" class="font-geist text-xs uppercase tracking-wider text-secondary hover:text-primary transition">Donate</a>
-    <span class="text-secondary/30 select-none">·</span>
-    <a href="/publications" class="font-geist text-xs uppercase tracking-wider text-secondary hover:text-primary transition">Careers</a>
-    <span class="text-secondary/30 select-none">·</span>
-    <a
-      href="https://www.linkedin.com/company/realityfoundation-eu/about/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-secondary hover:text-primary transition"
-      aria-label="LinkedIn"
-    >
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-        <rect x="2" y="9" width="4" height="12"/>
-        <circle cx="4" cy="4" r="2"/>
-      </svg>
-    </a>
+    <div class="flex items-center gap-3">
+      <a href={`mailto:${SITE.EMAIL}`} class="hover:text-primary transition"
+        >{SITE.EMAIL}</a
+      >
+      <span class="text-secondary/30 select-none">·</span>
+      <a
+        href="https://www.linkedin.com/company/realityfoundation-eu/about/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-primary transition"
+      >
+        LinkedIn
+      </a>
+    </div>
   </div>
 </footer>
