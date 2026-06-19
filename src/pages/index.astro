@@ -39,53 +39,69 @@ import { HOME } from "@/consts";
                 </div>
             </section>
 
-            <section class="space-y-8">
-                <div class="space-y-4">
-                    <h2 class="heading text-3xl uppercase md:text-4xl">Why this work matters</h2>
-                    <p class="leading-relaxed text-secondary">
-                        The proliferation of generative AI has made it trivially easy to fabricate
-                        images, documents, and video. Legal systems, journalism, and democratic
-                        processes depend on the integrity of evidence — a dependency that is now
-                        under attack.
-                    </p>
+            <!-- Section A: Problem → Solution teaser -->
+            <section class="space-y-16">
+
+                <!-- A1: Problem framing -->
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <p class="font-geist text-secondary text-sm uppercase tracking-wider">The Problem</p>
+                        <h2 class="heading text-3xl uppercase md:text-4xl">Visual truth is eroding — and there's no way to prove otherwise</h2>
+                    </div>
+                    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                        <div class="space-y-3">
+                            <h3 class="heading text-xl uppercase">What's broken</h3>
+                            <p class="text-sm leading-relaxed text-secondary">
+                                Today, there is no reliable way to prove with certainty whether a photo, video, or document was AI-generated. Detection-based approaches are fundamentally reactive — they lag behind generation models that keep getting better at producing realistic, harder-to-detect synthetic content.
+                            </p>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="heading text-xl uppercase">Why it matters</h3>
+                            <p class="text-sm leading-relaxed text-secondary">
+                                Journalism, legal evidence, insurance claims, and public accountability all depend on one assumption: that what we see is real. When that assumption breaks, truth becomes negotiable. Bad actors fabricate freely, and the honest lose the ability to prove they're telling the truth.
+                            </p>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="heading text-xl uppercase">Why now</h3>
+                            <p class="text-sm leading-relaxed text-secondary">
+                                This is a closing window. Once AI-generated content becomes indistinguishable from reality, retroactive verification becomes impossible — any unverified record from the past stays permanently disputable. Trust also collapses asymmetrically: once people stop believing digital evidence, restoring that trust is extraordinarily difficult. The authenticity layer has to exist before scepticism becomes the default.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- A2: Example cards -->
                 <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-                    <div class="space-y-3">
-                        <h3 class="heading text-xl uppercase">The Problem</h3>
-                        <p class="text-sm leading-relaxed text-secondary">
-                            Visual truth is eroding. Deepfakes, synthetic media, and AI-generated
-                            imagery are indistinguishable from authentic records. Courts,
-                            journalists, and ordinary people have no reliable mechanism to verify
-                            what they see.
-                        </p>
+                    <div class="space-y-3 rounded-lg border border-secondary p-6 transition hover:border-primary">
+                        <div class="image-placeholder" role="img" aria-label="Aerial photo of a snowstorm over a city, widely shared online">
+                            <p>Aerial photo of a snowstorm over a city, widely shared online</p>
+                        </div>
+                        <p class="font-geist text-xs uppercase tracking-wider text-secondary">Real — and disputed</p>
+                        <p class="text-sm leading-relaxed text-secondary">A viral aerial photo of a snowstorm was dismissed by many as AI-generated. It wasn't.</p>
+                        <p class="text-xs text-secondary opacity-60">Source: BBC News</p>
                     </div>
-                    <div class="space-y-3">
-                        <h3 class="heading text-xl uppercase">The Gap</h3>
-                        <p class="text-sm leading-relaxed text-secondary">
-                            No academic anchor. Industry-led detection tools exist, but they lack
-                            independent verification, peer review, and the permanence required for
-                            legal or archival use. Independent academic research is missing.
-                        </p>
-                    </div>
-                    <div class="space-y-3">
-                        <h3 class="heading text-xl uppercase">Our Response</h3>
-                        <p class="text-sm leading-relaxed text-secondary">
-                            Blockchain-anchored provenance. We research cryptographic timestamping,
-                            NFT-based provenance records, and immutable ledger architectures as
-                            tools to establish unambiguous chains of authenticity.
-                        </p>
-                    </div>
-                    <div class="space-y-3">
-                        <h3 class="heading text-xl uppercase">Long term</h3>
-                        <p class="text-sm leading-relaxed text-secondary">
-                            Academic validation layer. RealityFoundation will serve as the
-                            independent scientific counterpart to RealityCheck — providing
-                            peer-reviewed methodology, published datasets, and policy
-                            recommendations.
-                        </p>
+                    <div class="space-y-3 rounded-lg border border-secondary p-6 transition hover:border-primary">
+                        <div class="image-placeholder" role="img" aria-label="Side-by-side comparison of a real photo and an AI-generated image purporting to document the same event">
+                            <p>Side-by-side comparison of a real photo and an AI-generated image purporting to document the same event</p>
+                        </div>
+                        <p class="font-geist text-xs uppercase tracking-wider text-secondary">Fake — and convincing</p>
+                        <p class="text-sm leading-relaxed text-secondary">AI-generated images purporting to document a conflict zone circulated widely before being debunked.</p>
+                        <p class="text-xs text-secondary opacity-60">Source: Financial Times</p>
                     </div>
                 </div>
+
+                <!-- A3: Solution teaser -->
+                <div class="space-y-6 pt-4">
+                    <div class="space-y-4">
+                        <p class="font-geist text-secondary text-sm uppercase tracking-wider">Our Approach</p>
+                        <h2 class="heading text-2xl uppercase md:text-3xl">Certify reality before it can be faked</h2>
+                        <p class="leading-relaxed text-secondary max-w-3xl">
+                            We're building the infrastructure to certify media at the moment of capture — before manipulation can occur. Raw media and its metadata (timestamp, GPS, device fingerprint) are hashed instantly. That hash is signed and anchored to a public blockchain, producing a permanent, tamper-proof certificate of authenticity. The result is natively compatible with C2PA, the open content-provenance standard backed by Adobe, Google, Microsoft, OpenAI, and Amazon.
+                        </p>
+                    </div>
+                    <a href="#how-it-works" class="btn-primary inline-flex items-center">See the process →</a>
+                </div>
+
             </section>
 
             <section id="research" class="space-y-8">
@@ -231,3 +247,25 @@ import { HOME } from "@/consts";
         </div>
     </div>
 </Layout>
+
+<style>
+    .image-placeholder {
+        border: 1px dashed var(--color-secondary);
+        background-color: var(--color-light-grey);
+        border-radius: 10px;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 10rem;
+        opacity: 0.7;
+    }
+
+    .image-placeholder p {
+        color: var(--color-secondary);
+        font-size: 0.75rem;
+        text-align: center;
+        font-family: var(--font-geist);
+        line-height: 1.5;
+    }
+</style>
