@@ -9,9 +9,8 @@ import { SITE } from "@/consts";
     <p class="font-geist text-secondary text-sm md:text-base uppercase tracking-wider">{SITE.TITLE}</p>
     <h1
         class="heading text-[clamp(2.5rem,10vw,5rem)] uppercase"
-        aria-label="Don't detect AI fakes. Prevent them."
     >
-        <span id="typewriter-text"></span><span class="typewriter-cursor" aria-hidden="true">|</span>
+        Don't detect AI fakes. Prevent them.<span class="typewriter-cursor" aria-hidden="true">|</span>
     </h1>
     <p class="text-lg md:text-xl text-secondary max-w-3xl leading-relaxed pt-4">
         Certify your media at capture — tamper-proof, blockchain-anchored, C2PA-compliant.
@@ -36,37 +35,8 @@ import { SITE } from "@/consts";
         margin-left: 1px;
     }
 
-    .typewriter-cursor.done {
-        animation: blink-cursor 1.2s step-end infinite;
-    }
-
     @keyframes blink-cursor {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
     }
 </style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const fullText = "Don't detect AI fakes. Prevent them.";
-        const el = document.getElementById("typewriter-text");
-        const cursor = document.querySelector<HTMLElement>(".typewriter-cursor");
-        if (!el) return;
-
-        let i = 0;
-        const charDelay = 45;
-
-        function type() {
-            if (i < fullText.length) {
-                el.textContent += fullText.charAt(i);
-                i++;
-                setTimeout(type, charDelay);
-            } else {
-                cursor?.classList.add("done");
-            }
-        }
-
-        setTimeout(type, 400);
-    });
-</script>
-
