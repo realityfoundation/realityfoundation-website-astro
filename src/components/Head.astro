@@ -1,26 +1,92 @@
 ---
 import "@/styles/global.css";
 import { Font } from "astro:assets";
+import { SITE } from "@/consts";
 
 interface Props {
     title: string;
     description: string;
     image?: string;
+    canonical?: string;
+    noindex?: boolean;
 }
 
-const { title, description, image = "/placeholder.png" } = Astro.props;
+const {
+    title,
+    description,
+    image = "/logo.png",
+    canonical = new URL(Astro.url.pathname, SITE.URL).toString(),
+    noindex = false,
+} = Astro.props;
+
+const imageUrl = image.startsWith("http")
+    ? image
+    : new URL(image, SITE.URL).toString();
+
+const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
+
+const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.TITLE,
+    url: SITE.URL,
+    email: SITE.EMAIL,
+    logo: new URL("/logo.png", SITE.URL).toString(),
+};
+
+const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.TITLE,
+    url: SITE.URL,
+    inLanguage: "en",
+};
+
+const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: canonical,
+    isPartOf: {
+        "@type": "WebSite",
+        name: SITE.TITLE,
+        url: SITE.URL,
+    },
+};
 ---
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="generator" content={Astro.generator} />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content={robotsContent} />
+    <link rel="canonical" href={canonical} />
 
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
 
-<!-- fonts -->
-<Font cssVariable="--font-plex" preload />
-<Font cssVariable="--font-geist" preload />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.TITLE} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(organizationSchema)}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+
+    <Font cssVariable="--font-plex" preload />
+    <Font cssVariable="--font-geist" preload />
+</head>
