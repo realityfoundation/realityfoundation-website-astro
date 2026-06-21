@@ -1,28 +1,4 @@
 ---
-/**
- * Annotation — circular photo with a leader-line callout.
- *
- * Desktop geometry (md+):
- *   Image: h-30 w-30 = 120×120px. Circle center (60,60), radius 60px.
- *   figure gets padding-top: 60px to give the upward annotation room to render inside
- *   the figure box instead of overflowing above it.
- *
- *   Leader anchor at 45° from top corner of circle (in figure coords):
- *     side="right" → (102px, 78px)   [60+18 = 78 because of padding-top:60]
- *     side="left"  → ( 18px, 78px)
- *
- *   Polyline (local to SVG origin = anchor):
- *     P1 (0,0)       circle edge
- *     P2 (±36, -24)  elbow
- *     P3 (±36, -48)  riser top → in figure coords: y = 78-48 = 30px (inside padding)
- *
- *   Label: top ≈ 20px (riser-top y 30 - half line-height ~10), left/right from riser.
- *
- * Colors:
- *   variant="AI"       → var(--slate-blue)  existing token (#6665ddff, purple)
- *   variant="captured" → #0d9488            teal — no token in :root, commented fallback
- */
-
 interface Props {
   src: string;
   alt: string;
@@ -31,128 +7,97 @@ interface Props {
   side?: "right" | "left";
 }
 
-const { src, alt, label, variant, side = "right" } = Astro.props;
+const { src, alt, label, variant } = Astro.props;
 
-const color =
-  variant === "AI"
-    ? "var(--slate-blue)"  // existing token: #6665ddff (purple)
-    : "#0d9488";           // teal — no matching design token; fallback hex
+// User-requested colours — no matching tokens in :root; fallback hex values
+const color = variant === "AI"
+  ? "#7c3aed"  // bright purple — no :root token; fallback hex
+  : "#16a34a"; // bright green  — no :root token; fallback hex
 
-// SVG placed at the 45° anchor on the circle edge
-// (x: 102 right / 18 left; y: 78 = padding-top 60 + circle-anchor 18)
-const svgLeft = side === "right" ? "102px" : "18px";
-
-// Polyline local to SVG origin
-const dx = side === "right" ? 36 : -36;
-const polyPoints = `0,0 ${dx},-24 ${dx},-48`;
+// Small decorative prefix icon per variant
+const icon = variant === "AI" ? "✦" : "◎";
 ---
 
-<figure
-  class="annotation-figure"
-  data-side={side}
-  style={`--ann-color:${color};`}
->
+<figure class="ann-figure" style={`--ann-color:${color};`}>
   <img
     src={src}
     alt={alt}
     class="h-30 w-30 rounded-full object-cover border border-secondary"
   />
-
-  <!-- aria-hidden: purely decorative — meaning is in the text label -->
-  <svg
-    class="annotation-leader"
-    width="0"
-    height="0"
-    overflow="visible"
-    style={`left:${svgLeft};`}
-    aria-hidden="true"
-  >
-    <polyline points={polyPoints} />
-  </svg>
-
-  <!-- Mobile (<md): inline pill badge below the photo.
-       Desktop (≥md): absolutely positioned at riser top. -->
-  <figcaption class="annotation-label">{label}</figcaption>
+  <figcaption class="ann-bubble">
+    <span class="ann-icon" aria-hidden="true">{icon}</span>
+    {label}
+  </figcaption>
 </figure>
 
 <style>
-  .annotation-figure {
+  .ann-figure {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .ann-bubble {
     position: relative;
-  }
-
-  /* ── Leader SVG — hidden on mobile ── */
-  .annotation-leader {
-    display: none;
-    position: absolute;
-    top: 78px; /* padding-top(60) + circle-anchor-y(18) */
-    overflow: visible;
-    pointer-events: none;
-  }
-
-  .annotation-leader polyline {
-    fill: none;
-    stroke: var(--ann-color);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  /* ── Label — mobile: pill badge in normal flow ── */
-  .annotation-label {
+    margin-left: 18px;
     display: inline-flex;
     align-items: center;
-    margin-top: 0.5rem;
-    padding: 0.2rem 0.65rem;
-    border: 1px solid var(--ann-color);
-    border-radius: 9999px;
-    font-family: var(--font-geist);
-    font-size: 0.625rem; /* matches existing team badge size */
-    font-weight: 600;
+    gap: 0.45rem;
+
+    /* Typography */
+    font-family: var(--font-plex);
+    font-size: 0.6rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--ann-color);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    line-height: 1;
+    color: #fff;
+
+    /* Shape */
+    background: var(--ann-color);
+    border-radius: 2px;
+    padding: 0.45rem 0.7rem;
+
+    /* Glow + elevation */
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 0 0 1px color-mix(in srgb, var(--ann-color) 80%, #000),
+      0 0 18px -3px var(--ann-color),
+      0 3px 8px rgba(0, 0, 0, 0.3);
+
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    cursor: default;
   }
 
-  /* ── Desktop (≥md) ── */
-  @media (min-width: 768px) {
-    /* padding-top gives the annotation vertical room inside the figure box */
-    .annotation-figure {
-      padding-top: 60px;
-    }
+  /* Left-pointing tail */
+  .ann-bubble::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 12px solid var(--ann-color);
+  }
 
-    .annotation-leader {
-      display: block;
-    }
+  /* Hover: stronger glow + slight slide */
+  .ann-figure:hover .ann-bubble {
+    transform: translateX(3px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      0 0 0 1px color-mix(in srgb, var(--ann-color) 80%, #000),
+      0 0 28px -2px var(--ann-color),
+      0 4px 14px rgba(0, 0, 0, 0.35);
+  }
 
-    .annotation-label {
-      position: absolute;
-      /* riser top y = 78-48 = 30px; subtract ~half line-height */
-      top: 20px;
-      margin: 0;
-      padding: 0;
-      border: none;
-      border-radius: 0;
-      display: block;
-      font-family: var(--font-geist);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--ann-color);
-      white-space: nowrap;
-      line-height: 1.2;
-    }
-
-    /* right side: label 10px right of riser (riser at x=138) */
-    .annotation-figure[data-side="right"] .annotation-label {
-      left: 148px;
-    }
-
-    /* left side: label right-edge 10px left of riser (riser at x=-18 in figure)
-       right: calc(100% + 28px) = label right-edge is 28px left of figure left-edge */
-    .annotation-figure[data-side="left"] .annotation-label {
-      right: calc(100% + 28px);
-      text-align: right;
-    }
+  .ann-icon {
+    font-size: 0.65rem;
+    opacity: 0.9;
+    flex-shrink: 0;
   }
 </style>
