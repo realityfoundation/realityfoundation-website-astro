@@ -10,9 +10,9 @@ import { SITE } from "@/consts";
     <h1
         class="heading text-[clamp(2.5rem,10vw,5rem)] uppercase"
     >
-        Don't detect AI fakes. Prevent them.<span class="typewriter-cursor" aria-hidden="true">|</span>
+        <span id="hero-typewriter" aria-label="Don't detect AI fakes. Prevent them."></span><span class="typewriter-cursor" aria-hidden="true">|</span>
     </h1>
-    <p class="text-lg md:text-xl text-secondary max-w-3xl leading-relaxed pt-4">
+    <p class="text-lg md:text-xl text-secondary leading-relaxed pt-4">
         Certify your media at capture — tamper-proof, blockchain-anchored, C2PA-compliant.
     </p>
     <div class="flex flex-col md:flex-row gap-4 pt-8">
@@ -40,3 +40,24 @@ import { SITE } from "@/consts";
         50% { opacity: 0; }
     }
 </style>
+
+<script>
+    const el = document.getElementById("hero-typewriter");
+    const text = "Don't detect AI fakes. Prevent them.";
+    const cursor = document.querySelector(".typewriter-cursor") as HTMLElement | null;
+    let i = 0;
+
+    function type() {
+        if (!el) return;
+        if (i < text.length) {
+            el.textContent += text[i];
+            i++;
+            setTimeout(type, i === 1 ? 400 : 45);
+        } else if (cursor) {
+            cursor.style.animation = "blink-cursor 0.8s step-end infinite";
+        }
+    }
+
+    if (cursor) cursor.style.animation = "none";
+    setTimeout(type, 600);
+</script>
