@@ -19,7 +19,7 @@ const links = [
     >
       <img src="/logo.png" alt="RealityFoundation logo" class="h-10 w-auto" />
     </a>
-    <nav class="text-secondary hidden space-x-3 md:block">
+    <nav class="text-secondary hidden items-center space-x-3 md:flex">
       {
         links.map((link) => (
           <a
@@ -30,6 +30,7 @@ const links = [
           </a>
         ))
       }
+      <a href="/donate" class="btn-primary ml-2 !py-0 !px-5 sm:!py-0 sm:!px-5 h-10 inline-flex items-center text-sm">Donate</a>
     </nav>
     <button
       id="menu-toggle"
@@ -56,6 +57,7 @@ const links = [
           </a>
         ))
       }
+      <a href="/donate" class="btn-primary inline-flex items-center justify-center">Donate</a>
     </nav>
   </div>
 </header>

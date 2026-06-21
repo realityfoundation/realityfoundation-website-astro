@@ -8,10 +8,14 @@ import Layout from "@/layouts/Layout.astro";
             <section class="space-y-6">
                 <p class="font-geist text-secondary text-sm uppercase tracking-wider">Donate</p>
                 <h1 class="heading text-4xl md:text-6xl uppercase">Support the research</h1>
-                <div class="max-w-3xl space-y-4">
+                <div class="space-y-4">
                     <p class="text-lg leading-relaxed text-secondary">
-                        We're setting up how to accept contributions. Check back soon, or reach out directly if you'd like to support this work now.
+                        Your contribution funds independent research on media authenticity, AI-generated counterfeits, and the infrastructure needed to certify reality.
                     </p>
+                </div>
+                <div class="flex justify-center pt-4">
+                    <script is:inline type="module" src="https://donorbox.org/widgets.js" async></script>
+                    <dbox-widget campaign="realitycheck-mvp" type="donation_form" interval="1 M" amount="25" enable-auto-scroll="true"></dbox-widget>
                 </div>
             </section>
         </div>
