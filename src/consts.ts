@@ -4,6 +4,7 @@ export const SITE = {
   TITLE: "RealityFoundation",
   DESCRIPTION:
     "Establishing Ground Truth in the Age of AI. We study the boundaries between authentic and synthetic media and build the academic infrastructure to defend them.",
+  EMAIL: "realityfoundation.info@gmail.com",
 };
 
 export const HOME = {
