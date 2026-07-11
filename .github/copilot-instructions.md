@@ -58,7 +58,7 @@ export const SITE = {
   URL: "https://realityfoundation.eu",
   TITLE: "RealityFoundation",
   DESCRIPTION: "...",
-  EMAIL: "hello@realityfoundation.eu",
+  EMAIL: "realityfoundation.info@gmail.com",
 };
 ```
 Update this when changing site branding, domain, or contact info.
