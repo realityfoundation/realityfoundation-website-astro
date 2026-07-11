@@ -1,0 +1,195 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import JobMeta from "@/components/careers/JobMeta.astro";
+import AboutBlock from "@/components/careers/AboutBlock.astro";
+import WhatWeOfferBlock from "@/components/careers/WhatWeOfferBlock.astro";
+import SelectionProcessBlock from "@/components/careers/SelectionProcessBlock.astro";
+
+export async function getStaticPaths() {
+  const jobs = await getCollection("jobs");
+  return jobs.map((job) => ({
+    params: { slug: job.id },
+    props: { job },
+  }));
+}
+
+const { job } = Astro.props;
+const { Content } = await render(job);
+const d = job.data;
+const isRole = d.kind === "role";
+---
+
+<Layout
+  title={`${d.title} — RealityFoundation`}
+  description={d.summary}
+>
+  <div class="container mx-auto px-6 pt-18">
+    <div class="py-12">
+
+      <a
+        href="/careers"
+        class="text-secondary hover:text-primary text-sm transition-colors mb-10 inline-block"
+      >
+        ← Careers
+      </a>
+
+      <div class="jd-wrap">
+
+        <!-- Page header -->
+        <header class="space-y-4 pb-8 border-b border-secondary">
+          <h1 class="heading text-3xl md:text-5xl uppercase">{d.title}</h1>
+          <p class="text-lg text-secondary leading-relaxed">{d.summary}</p>
+          {isRole && (
+            <JobMeta
+              team={d.team}
+              locations={d.locations}
+              employmentType={d.employmentType}
+              salaryMin={d.salaryMin}
+              salaryMax={d.salaryMax}
+              salaryCurrency={d.salaryCurrency}
+              salaryPeriod={d.salaryPeriod}
+              salaryNote={d.salaryNote}
+            />
+          )}
+        </header>
+
+        <!-- Top apply CTA -->
+        {isRole && d.applyMode === "form" && (
+          <div class="pt-2">
+            <a href={`/careers/${job.id}/apply`} class="btn-primary inline-block">
+              Apply for this role
+            </a>
+          </div>
+        )}
+
+        <!-- Section (a): About RealityFoundation — rendered for roles only -->
+        {isRole && <AboutBlock />}
+
+        <!-- Sections (b) + (c): role-specific markdown body -->
+        <article class="jd-article">
+          <Content />
+        </article>
+
+        <!-- Section (d): What we offer — rendered for roles only -->
+        {isRole && (
+          <WhatWeOfferBlock
+            salaryMin={d.salaryMin}
+            salaryMax={d.salaryMax}
+            salaryCurrency={d.salaryCurrency}
+            salaryPeriod={d.salaryPeriod}
+            salaryNote={d.salaryNote}
+          />
+        )}
+
+        <!-- Section (e): The selection process — rendered for roles only -->
+        {isRole && (
+          <SelectionProcessBlock workingSession={d.workingSession} />
+        )}
+
+        <!-- Bottom CTA: apply button for form roles, mailto for email, nothing for none -->
+        {d.applyMode === "form" && (
+          <div class="pt-4 border-t border-secondary">
+            <a href={`/careers/${job.id}/apply`} class="btn-primary inline-block">
+              Apply for this role
+            </a>
+          </div>
+        )}
+        {d.applyMode === "email" && d.applyEmail && (
+          <div class="pt-4 border-t border-secondary">
+            <a
+              href={`mailto:${d.applyEmail}`}
+              class="text-secondary hover:text-primary text-sm transition-colors underline underline-offset-2"
+            >
+              {d.applyEmail}
+            </a>
+          </div>
+        )}
+
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .jd-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* Override the global article rule's mx-auto so it doesn't drift inside our constrained wrapper */
+  .jd-article {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Prose-style heading treatment inside the markdown body */
+  .jd-article :global(h2) {
+    font-family: var(--font-plex);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+    margin: 2rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-secondary);
+  }
+
+  .jd-article :global(h2:first-child) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .jd-article :global(ul) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .jd-article :global(ul li) {
+    font-family: var(--font-geist);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-secondary);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .jd-article :global(ul li::before) {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    opacity: 0.5;
+  }
+
+  .jd-article :global(p) {
+    font-family: var(--font-geist);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-secondary);
+    margin: 1rem 0 0;
+  }
+
+  .jd-article :global(strong) {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+
+  .jd-article :global(em) {
+    font-style: italic;
+  }
+
+  .jd-article :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

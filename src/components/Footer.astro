@@ -7,11 +7,13 @@ import { SITE } from "@/consts";
     class="text-secondary flex flex-col items-start justify-between gap-6 text-sm sm:flex-row sm:items-center"
   >
     <p>© {new Date().getFullYear()} {SITE.TITLE}</p>
-    <div class="flex items-center gap-3">
+    <nav aria-label="Footer navigation" class="flex items-center gap-3">
+      <a href="/careers" class="hover:text-primary transition">Careers</a>
+      <span class="text-secondary/30 select-none" aria-hidden="true">·</span>
       <a href={`mailto:${SITE.EMAIL}`} class="hover:text-primary transition"
         >{SITE.EMAIL}</a
       >
-      <span class="text-secondary/30 select-none">·</span>
+      <span class="text-secondary/30 select-none" aria-hidden="true">·</span>
       <a
         href="https://www.linkedin.com/company/realityfoundation-eu/about/"
         target="_blank"
@@ -20,6 +22,6 @@ import { SITE } from "@/consts";
       >
         LinkedIn
       </a>
-    </div>
+    </nav>
   </div>
 </footer>

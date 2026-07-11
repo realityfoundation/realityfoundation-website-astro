@@ -1,0 +1,167 @@
+---
+import JobMeta from "./JobMeta.astro";
+
+interface Props {
+  slug: string;
+  title: string;
+  summary: string;
+  kind: "role" | "open";
+  team: string;
+  locations: string[];
+  employmentType: string;
+  salaryMin?: number;
+  salaryMax?: number;
+  salaryCurrency?: string;
+  salaryPeriod?: "year" | "month";
+  salaryNote?: string;
+}
+
+const {
+  slug,
+  title,
+  summary,
+  kind,
+  team,
+  locations,
+  employmentType,
+  salaryMin,
+  salaryMax,
+  salaryCurrency,
+  salaryPeriod,
+  salaryNote,
+} = Astro.props;
+
+const isOpen = kind === "open";
+---
+
+<article class:list={["jc-card", { "jc-card--open": isOpen }]}>
+  <div class="jc-body">
+    {
+      isOpen && (
+        <span class="jc-open-badge" aria-label="Expression of interest — not a vacancy">
+          Expression of interest
+        </span>
+      )
+    }
+    <h2 class="jc-title">
+      <a href={`/careers/${slug}`} class="jc-link">{title}</a>
+    </h2>
+    <p class="jc-summary">{summary}</p>
+    {
+      !isOpen && (
+        <JobMeta
+          team={team}
+          locations={locations}
+          employmentType={employmentType}
+          salaryMin={salaryMin}
+          salaryMax={salaryMax}
+          salaryCurrency={salaryCurrency}
+          salaryPeriod={salaryPeriod}
+          salaryNote={salaryNote}
+        />
+      )
+    }
+  </div>
+  <div class="jc-arrow" aria-hidden="true">→</div>
+</article>
+
+<style>
+  .jc-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid var(--color-secondary);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s, background 0.2s;
+    opacity: 0.9;
+  }
+
+  .jc-card:hover {
+    border-color: var(--color-foreground);
+    opacity: 1;
+  }
+
+  /* Expression of interest — dashed border, visually distinct */
+  .jc-card--open {
+    border-style: dashed;
+    opacity: 0.75;
+  }
+  .jc-card--open:hover {
+    opacity: 1;
+  }
+
+  .jc-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .jc-open-badge {
+    display: inline-block;
+    font-family: var(--font-geist);
+    font-size: 0.5625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    border-radius: 9999px;
+    padding: 0.1rem 0.5rem;
+    width: fit-content;
+    opacity: 0.6;
+  }
+
+  .jc-title {
+    font-family: var(--font-plex);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  /* Make the whole card clickable via the link, without wrapping in <a> */
+  .jc-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .jc-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+  }
+  .jc-card {
+    position: relative;
+  }
+
+  .jc-link:focus-visible {
+    outline: none;
+  }
+  .jc-card:focus-within {
+    outline: 2px dashed var(--color-foreground);
+    outline-offset: 2px;
+  }
+
+  .jc-summary {
+    font-family: var(--font-geist);
+    font-size: 0.875rem;
+    color: var(--color-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .jc-arrow {
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .jc-card:hover .jc-arrow {
+    transform: translateX(3px);
+    color: var(--color-foreground);
+  }
+</style>

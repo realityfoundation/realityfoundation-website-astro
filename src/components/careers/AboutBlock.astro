@@ -1,0 +1,62 @@
+---
+// Shared block — appears as section (a) in all role posts. Single source of truth.
+---
+
+<section class="ab-section">
+  <h2 class="ab-heading">About RealityFoundation</h2>
+  <div class="ab-body">
+    <p>
+      RealityFoundation is a non-profit, based in Brussels, building the authenticity layer
+      for digital media.
+    </p>
+    <p>
+      We certify photos and videos at the moment of capture. The raw media and its metadata
+      are hashed, signed, and anchored to a public blockchain before anything can touch them
+      — so a media record can be <strong>proven</strong> authentic, not merely believed. Our
+      work is open source, built on the C2PA standard, and runs on infrastructure Europe
+      controls.
+    </p>
+    <p>
+      We do this because the alternative is already arriving. Once synthetic media is
+      indistinguishable from real media, everything unproven becomes deniable — insurance
+      claims, court evidence, journalism, public accountability. Detection is a losing race:
+      it will always be one model behind. Provenance at the origin is the only thing that
+      holds.
+    </p>
+    <p>We are small, early, and public about our work. The people who join now decide what this becomes.</p>
+  </div>
+</section>
+
+<style>
+  .ab-section {
+    border-top: 1px solid var(--color-secondary);
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ab-heading {
+    font-family: var(--font-plex);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+  }
+
+  .ab-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    font-family: var(--font-geist);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-secondary);
+  }
+
+  .ab-body strong {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+</style>

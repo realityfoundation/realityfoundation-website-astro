@@ -1,0 +1,87 @@
+---
+interface Props {
+  team: string;
+  locations: string[];
+  employmentType: string;
+  salaryMin?: number;
+  salaryMax?: number;
+  salaryCurrency?: string;
+  salaryPeriod?: "year" | "month";
+  salaryNote?: string;
+}
+
+const {
+  team,
+  locations,
+  employmentType,
+  salaryMin,
+  salaryMax,
+  salaryCurrency = "EUR",
+  salaryPeriod = "year",
+  salaryNote,
+} = Astro.props;
+
+// Format salary band from frontmatter — never hardcoded
+function formatSalary(
+  min?: number,
+  max?: number,
+  currency: string = "EUR",
+  period: string = "year",
+  note?: string,
+): string | null {
+  if (min === undefined) return null;
+  const sym = currency === "EUR" ? "€" : currency;
+  const fmt = (n: number) => n.toLocaleString("en-US");
+  let s = `${sym}${fmt(min)}`;
+  if (max !== undefined) s += ` – ${sym}${fmt(max)}`;
+  s += ` / ${period}`;
+  if (note) s += `  ${note}`;
+  return s;
+}
+
+const salaryBand = formatSalary(
+  salaryMin,
+  salaryMax,
+  salaryCurrency,
+  salaryPeriod,
+  salaryNote,
+);
+---
+
+<ul class="jm-chips" aria-label="Role details">
+  <li class="jm-chip">{team}</li>
+  {locations.map((loc) => <li class="jm-chip">{loc}</li>)}
+  <li class="jm-chip">{employmentType}</li>
+  {salaryBand && <li class="jm-chip jm-chip--salary">{salaryBand}</li>}
+</ul>
+
+<style>
+  .jm-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .jm-chip {
+    display: inline-block;
+    font-family: var(--font-geist);
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    border-radius: 9999px;
+    padding: 0.15rem 0.55rem;
+    opacity: 0.65;
+  }
+
+  .jm-chip--salary {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    opacity: 1;
+  }
+</style>

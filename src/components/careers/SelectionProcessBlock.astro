@@ -1,0 +1,95 @@
+---
+// Shared block — section (e). workingSession is the role-specific step-3 text.
+// Stored as a string (may contain HTML for e.g. italic text) — rendered via set:html.
+
+interface Props {
+  workingSession?: string;
+}
+
+const { workingSession = "<<working session description>>" } = Astro.props;
+---
+
+<section class="sp-section">
+  <h2 class="sp-heading">The selection process</h2>
+  <p class="sp-lede">Four steps, about three weeks. You will know where you stand at every one of them.</p>
+  <ol class="sp-list">
+    <li>
+      <strong>1. Application review.</strong> A person reads it — no model screens you out.
+      You hear back within &lt;&lt;10&gt;&gt; working days either way.
+    </li>
+    <li>
+      <strong>2. Intro call, 30 minutes.</strong> With &lt;&lt;NAME&gt;&gt;. What you want,
+      what we're building, whether the shapes match.
+    </li>
+    <li>
+      <strong>3. A working session.</strong> <Fragment set:html={workingSession} />
+    </li>
+    <li>
+      <strong>4. The team, 2 × 45 minutes.</strong> With the people you'd actually work
+      with. Then two references.
+    </li>
+  </ol>
+  <p class="sp-close">
+    Decision within &lt;&lt;5&gt;&gt; working days of the last step. If it's a no, we tell
+    you why. We know that's rare. It shouldn't be.
+  </p>
+</section>
+
+<style>
+  .sp-section {
+    border-top: 1px solid var(--color-secondary);
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sp-heading {
+    font-family: var(--font-plex);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+  }
+
+  .sp-lede,
+  .sp-close {
+    font-family: var(--font-geist);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-secondary);
+    margin: 0;
+  }
+
+  .sp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    font-family: var(--font-geist);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-secondary);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sp-list li {
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .sp-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    opacity: 0.5;
+  }
+
+  .sp-list strong {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+</style>

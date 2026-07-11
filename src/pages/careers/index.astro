@@ -1,0 +1,87 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import JobCard from "@/components/careers/JobCard.astro";
+import { getCollection } from "astro:content";
+
+// Fetch all jobs, exclude closed ones
+const allJobs = await getCollection("jobs", ({ data }) => data.status !== "closed");
+
+// Regular vacancies sorted by order, then expressions of interest sorted by order
+const roles = allJobs
+  .filter((j) => j.data.kind === "role")
+  .sort((a, b) => a.data.order - b.data.order);
+
+const openEntries = allJobs
+  .filter((j) => j.data.kind === "open")
+  .sort((a, b) => a.data.order - b.data.order);
+
+const jobs = [...roles, ...openEntries];
+---
+
+<Layout
+  title="Careers — RealityFoundation"
+  description="Open roles at RealityFoundation. We are building the authenticity layer for digital media — C2PA, blockchain-anchored, open source, European infrastructure."
+>
+  <div class="container mx-auto px-6 pt-18">
+    <div class="space-y-16 py-12">
+
+      <section class="space-y-6">
+        <h1 class="heading text-4xl md:text-6xl uppercase">Careers</h1>
+        <div class="space-y-4">
+          <h2 class="heading text-xl md:text-2xl">Come and build the proof layer.</h2>
+          <p class="text-lg leading-relaxed text-secondary">
+            We are a small non-profit in Brussels working on a problem that gets harder every
+            month we don't solve it.
+          </p>
+          <p class="text-lg leading-relaxed text-secondary">
+            Everything below is real: real budget, real scope, real salary band. If none of
+            it fits, the last one is for you.
+          </p>
+        </div>
+      </section>
+
+      <!-- Job listings -->
+      <section class="space-y-4 border-t border-secondary pt-12">
+        <h2 class="heading text-2xl uppercase sr-only">Open roles</h2>
+
+        {
+          jobs.length === 0 ? (
+            <p class="text-secondary text-lg leading-relaxed">
+              There are no open roles right now. Check back soon, or send an
+              expression of interest to{" "}
+              <a
+                href="mailto:realityfoundation.info@gmail.com"
+                class="underline underline-offset-2 hover:text-primary transition"
+              >
+                realityfoundation.info@gmail.com
+              </a>
+              .
+            </p>
+          ) : (
+            <ul class="space-y-3" role="list">
+              {jobs.map((job) => (
+                <li>
+                  <JobCard
+                    slug={job.id}
+                    title={job.data.title}
+                    summary={job.data.summary}
+                    kind={job.data.kind}
+                    team={job.data.team}
+                    locations={job.data.locations}
+                    employmentType={job.data.employmentType}
+                    salaryMin={job.data.salaryMin}
+                    salaryMax={job.data.salaryMax}
+                    salaryCurrency={job.data.salaryCurrency}
+                    salaryPeriod={job.data.salaryPeriod}
+                    salaryNote={job.data.salaryNote}
+                  />
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </section>
+
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,102 @@
+---
+// Shared block — section (d), Variant 1: non-profit, no equity.
+// Salary band is derived from frontmatter props — never hardcoded.
+
+interface Props {
+  salaryMin?: number;
+  salaryMax?: number;
+  salaryCurrency?: string;
+  salaryPeriod?: "year" | "month";
+  salaryNote?: string;
+}
+
+const {
+  salaryMin,
+  salaryMax,
+  salaryCurrency = "EUR",
+  salaryPeriod = "year",
+  salaryNote,
+} = Astro.props;
+
+function formatSalary(
+  min?: number,
+  max?: number,
+  currency: string = "EUR",
+  period: string = "year",
+  note?: string,
+): string {
+  if (min === undefined) return "<<salary band>>";
+  const sym = currency === "EUR" ? "€" : currency;
+  const fmt = (n: number) => n.toLocaleString("en-US");
+  let s = `${sym}${fmt(min)}`;
+  if (max !== undefined) s += ` – ${sym}${fmt(max)}`;
+  s += ` / ${period}`;
+  if (note) s += `  ${note}`;
+  return s;
+}
+
+const salary = formatSalary(salaryMin, salaryMax, salaryCurrency, salaryPeriod, salaryNote);
+---
+
+<section class="wwo-section">
+  <h2 class="wwo-heading">What we offer</h2>
+  <ul class="wwo-list">
+    <li><strong>{salary}</strong>, gross, on a Belgian permanent contract. We publish the band because you shouldn't have to negotiate blind, and because we'd rather spend the interview talking about the work.</li>
+    <li><strong>Brussels, or remote.</strong> Our home is Brussels and we'd love to see you there — but we hire from anywhere we can legally employ you &lt;&lt;CONFIRM: Belgium only / EU via EOR / other&gt;&gt;. We get everyone in the same room &lt;&lt;X&gt;&gt; times a year and we pay for it.</li>
+    <li>Belgian statutory benefits, plus &lt;&lt;meal vouchers, hospitalisation insurance, group insurance, home-working allowance, mobility budget or full public transport, eco-cheques&gt;&gt;. &lt;&lt;CONFIRM against your joint committee — see prompt file, Decision 4&gt;&gt;</li>
+    <li>&lt;&lt;25&gt;&gt; days off plus Belgian public holidays, and we notice if you don't take them.</li>
+    <li>A real budget for equipment, training, and the conferences that matter — not a token gesture.</li>
+    <li><strong>Your work is public.</strong> What you build here stays in the open, under your name, and you keep it when you leave.</li>
+    <li>We are a non-profit. There is no cap table and no exit. What we offer instead is that the thing gets built, it stays open, and it stays European. For some people that is worth more than options. If it isn't for you, that's a fair answer and we'd rather know now.</li>
+  </ul>
+</section>
+
+<style>
+  .wwo-section {
+    border-top: 1px solid var(--color-secondary);
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .wwo-heading {
+    font-family: var(--font-plex);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+  }
+
+  .wwo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-family: var(--font-geist);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-secondary);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .wwo-list li {
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .wwo-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    opacity: 0.5;
+  }
+
+  .wwo-list strong {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+</style>
