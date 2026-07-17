@@ -53,7 +53,7 @@ const applyHref = `mailto:${applyEmail}?subject=${applySubject}&body=${applyBody
         ← Careers
       </a>
 
-      <div class="jd-wrap">
+      <div class="jd-wrap max-w-4xl mx-auto">
 
         <!-- Page header -->
         <header class="space-y-4 pb-8 border-b border-secondary">
@@ -77,9 +77,9 @@ const applyHref = `mailto:${applyEmail}?subject=${applySubject}&body=${applyBody
         {isRole && <AboutBlock />}
 
         <!-- Sections (b) + (c): role-specific markdown body -->
-        <article class="jd-article">
+        <div class="jd-article prose prose-neutral max-w-none">
           <Content />
-        </article>
+        </div>
 
         <!-- Section (d): What we offer — rendered for roles only -->
         {isRole && (
@@ -135,78 +135,8 @@ const applyHref = `mailto:${applyEmail}?subject=${applySubject}&body=${applyBody
     margin-right: 0;
   }
 
-  /* Prose-style heading treatment inside the markdown body */
-  .jd-article :global(h2) {
-    font-family: var(--font-plex);
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    color: var(--color-foreground);
-    margin: 2rem 0 1rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-secondary);
-  }
-
-  .jd-article :global(h2:first-child) {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-  }
-
-  .jd-article :global(ul) {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.22rem;
-  }
-
-  .jd-article :global(ul li) {
-    font-family: var(--font-geist);
-    font-size: 1rem;
-    line-height: 1.3;
+  .jd-article {
     color: var(--color-secondary);
-    padding-left: 1.25rem;
-    position: relative;
-    margin: 0 !important;
-  }
-
-  .jd-article :global(ul li::before) {
-    content: "–";
-    position: absolute;
-    left: 0;
-    color: var(--color-secondary);
-    opacity: 0.5;
-  }
-
-  .jd-article :global(ul li p) {
-    margin: 0 !important;
-    line-height: 1.3 !important;
-  }
-
-  .jd-article :global(p) {
-    font-family: var(--font-geist);
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-secondary);
-    margin: 1rem 0 0;
-  }
-
-  .jd-article :global(strong) {
-    color: var(--color-foreground);
-    font-weight: 600;
-  }
-
-  .jd-article :global(em) {
-    font-style: italic;
-  }
-
-  .jd-article :global(a) {
-    color: var(--color-primary);
-    text-decoration: underline;
-    text-underline-offset: 2px;
   }
 
   .jd-cta {
