@@ -16,7 +16,7 @@ salaryNote: "OTE"
 applyMode: form
 websiteFields: ["linkedin", "x", "scholar"]
 datePosted: "2026-07-11"
-workingSession: "In a paid working session, you build and defend a segment-prioritization memo from a small dataset"
+workingSession: "In a working session, you build and defend a segment-prioritization memo from a small dataset"
 ---
 
 ## What you bring — technical and domain skills

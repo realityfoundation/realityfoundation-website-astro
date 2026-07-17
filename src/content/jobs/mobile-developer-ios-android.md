@@ -15,7 +15,7 @@ salaryPeriod: year
 applyMode: form
 websiteFields: ["linkedin", "github", "x"]
 datePosted: "2026-07-17"
-workingSession: "In a paid session, we review a realistic mobile capture flow and ask you to design integrity checks and failure handling from camera event to backend submission"
+workingSession: "In a session, we review a realistic mobile capture flow and ask you to design integrity checks and failure handling from camera event to backend submission"
 ---
 
 ## Must-have technical skills

@@ -15,7 +15,7 @@ salaryPeriod: year
 applyMode: form
 websiteFields: ["linkedin", "github", "scholar", "x"]
 datePosted: "2026-07-11"
-workingSession: "You get a simplified media-to-certificate flow plus a reliability incident, then walk us through the changes you would make and why in a paid session"
+workingSession: "You get a simplified media-to-certificate flow plus a reliability incident, then walk us through the changes you would make and why in a practical session"
 ---
 
 ## Must-have technical skills

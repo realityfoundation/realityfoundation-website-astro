@@ -15,7 +15,7 @@ salaryPeriod: year
 applyMode: form
 websiteFields: ["linkedin", "github", "scholar", "x"]
 datePosted: "2026-07-11"
-workingSession: "In a paid threat-modeling session, we walk through our device-to-certificate flow and you identify attack surfaces, priorities, and first controls"
+workingSession: "In a threat-modeling session, we walk through our device-to-certificate flow and you identify attack surfaces, priorities, and first controls"
 ---
 
 ## Must-have technical skills

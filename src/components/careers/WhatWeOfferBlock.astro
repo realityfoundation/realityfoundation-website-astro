@@ -43,11 +43,9 @@ const salary = formatSalary(salaryMin, salaryMax, salaryCurrency, salaryPeriod, 
   <ul class="wwo-list">
     <li><strong>{salary}</strong> gross on a Belgian permanent contract. We publish the band because you should not have to negotiate blind</li>
     <li><strong>Brussels or remote</strong> Our base is Brussels, and we can hire anywhere in the EU. We also bring the team together 2 times a year, on us</li>
-    <li>We currently do not offer additional benefits beyond statutory requirements</li>
-    <li>25 days off plus Belgian public holidays</li>
-    <li>A real budget for equipment, training, and relevant conferences</li>
+    <li><strong>Tools and learning budget</strong> A real budget for equipment, training, and relevant conferences</li>
     <li><strong>Your work is public</strong> What you build here stays in the open, under your name</li>
-    <li>We are a non-profit. No cap table, no exit story. The upside here is impact, ownership, and building something that stays open</li>
+    <li><strong>Growth, impact, and ownership</strong> You can grow into the role and shape how it evolves, while working with a small dynamic team on a mission that protects trust in digital media and lets you be part of meaningful change</li>
   </ul>
 </section>
 
@@ -77,22 +75,9 @@ const salary = formatSalary(salaryMin, salaryMax, salaryCurrency, salaryPeriod, 
     font-size: 1rem;
     line-height: 1.38;
     color: var(--color-secondary);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .wwo-list li {
+    list-style: disc;
     padding-left: 1.25rem;
-    position: relative;
-  }
-
-  .wwo-list li::before {
-    content: "–";
-    position: absolute;
-    left: 0;
-    color: var(--color-secondary);
-    opacity: 0.5;
+    margin: 0;
   }
 
   .wwo-list strong {

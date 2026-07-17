@@ -16,7 +16,7 @@ salaryNote: "base, plus uncapped variable — OTE €85,000 – €110,000"
 applyMode: form
 websiteFields: ["linkedin", "x"]
 datePosted: "2026-07-11"
-workingSession: "A live discovery call: we play a regional head of claims at a European non-life insurer, and you run the meeting. Sixty minutes, paid. Then a one-page territory plan we talk through together — we are not marking you on the formatting."
+workingSession: "A live discovery call: we play a regional head of claims at a European non-life insurer, and you run the meeting. Sixty minutes. Then a one-page territory plan we talk through together — we are not marking you on the formatting."
 ---
 
 ## Your responsibilities

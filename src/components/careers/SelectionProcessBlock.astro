@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  workingSession = "A paid practical session based on real work you'll likely do with us",
+  workingSession = "A practical session based on real work you'll likely do with us",
 } = Astro.props;
 ---
 
@@ -17,18 +17,18 @@ const {
   <ol class="sp-list">
     <li>
       <strong>Application review</strong> A person reads it — no model screens you out.
-      You hear back within 7 working days either way.
+      You hear back within 7 working days either way
     </li>
     <li>
       <strong>Intro call (30 minutes)</strong> With the founding team. What you want,
-      what we're building, whether the shapes match.
+      what we're building, whether the shapes match
     </li>
     <li>
       <strong>Working session</strong> <Fragment set:html={workingSession} />
     </li>
     <li>
-      <strong>The team (2 x 45 minutes)</strong> With the people you'd actually work
-      with. Then two references.
+      <strong>Team call (45 minutes)</strong> With the people you'd actually work
+      with, then references
     </li>
   </ol>
   <p class="sp-close">
