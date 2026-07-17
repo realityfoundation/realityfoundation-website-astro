@@ -20,6 +20,23 @@ const { Content } = await render(job);
 const d = job.data;
 const isRole = d.kind === "role";
 const applyEmail = d.applyEmail ?? SITE.EMAIL;
+const applySubject = encodeURIComponent(`Application - ${d.title}`);
+const applyBody = encodeURIComponent(
+  `Hi RealityFoundation team,
+
+I am applying for the ${d.title} role.
+
+Attached:
+- CV (PDF)
+- LinkedIn profile
+- Relevant links (GitHub, portfolio, publications)
+
+A short note on why this role is a fit:
+
+Best,
+[Your name]`,
+);
+const applyHref = `mailto:${applyEmail}?subject=${applySubject}&body=${applyBody}`;
 ---
 
 <Layout
@@ -56,15 +73,6 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
           )}
         </header>
 
-        <!-- Top apply CTA -->
-        {isRole && d.applyMode === "form" && (
-          <div class="pt-2">
-            <a href={`/careers/${job.id}/apply`} class="btn-primary inline-block">
-              Apply for this role
-            </a>
-          </div>
-        )}
-
         <!-- Section (a): About RealityFoundation — rendered for roles only -->
         {isRole && <AboutBlock />}
 
@@ -89,21 +97,21 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
           <SelectionProcessBlock workingSession={d.workingSession} />
         )}
 
-        <!-- Bottom CTA: apply button for form roles, mailto for email, nothing for none -->
+        <!-- Bottom CTA -->
         {d.applyMode === "form" && (
-          <div class="pt-4 border-t border-secondary">
-            <a href={`/careers/${job.id}/apply`} class="btn-primary inline-block">
+          <div class="jd-cta">
+            <a href={applyHref} class="btn-primary inline-block">
               Apply for this role
             </a>
           </div>
         )}
         {d.applyMode === "email" && (
-          <div class="pt-4 border-t border-secondary">
+          <div class="jd-cta">
             <a
-              href={`mailto:${applyEmail}`}
-              class="text-secondary hover:text-primary text-sm transition-colors underline underline-offset-2"
+              href={applyHref}
+              class="btn-primary inline-block"
             >
-              {applyEmail}
+              Apply for this role
             </a>
           </div>
         )}
@@ -152,16 +160,17 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.22rem;
   }
 
   .jd-article :global(ul li) {
     font-family: var(--font-geist);
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.3;
     color: var(--color-secondary);
     padding-left: 1.25rem;
     position: relative;
+    margin: 0 !important;
   }
 
   .jd-article :global(ul li::before) {
@@ -170,6 +179,11 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
     left: 0;
     color: var(--color-secondary);
     opacity: 0.5;
+  }
+
+  .jd-article :global(ul li p) {
+    margin: 0 !important;
+    line-height: 1.3 !important;
   }
 
   .jd-article :global(p) {
@@ -193,5 +207,10 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
     color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+
+  .jd-cta {
+    display: flex;
+    justify-content: flex-end;
   }
 </style>
