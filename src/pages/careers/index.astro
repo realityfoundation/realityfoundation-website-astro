@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import JobCard from "@/components/careers/JobCard.astro";
+import { SITE } from "@/consts";
 import { getCollection } from "astro:content";
 
 // Fetch all jobs, exclude closed ones
@@ -50,10 +51,10 @@ const jobs = [...roles, ...openEntries];
               There are no open roles right now. Check back soon, or send an
               expression of interest to{" "}
               <a
-                href="mailto:realityfoundation.info@gmail.com"
+                href={`mailto:${SITE.EMAIL}`}
                 class="underline underline-offset-2 hover:text-primary transition"
               >
-                realityfoundation.info@gmail.com
+                {SITE.EMAIL}
               </a>
               .
             </p>

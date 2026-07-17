@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { SITE } from "@/consts";
 ---
 
 <Layout
@@ -23,7 +24,7 @@ import Layout from "@/layouts/Layout.astro";
           &lt;&lt;RealityFoundation ASBL/AISBL, address, 1000 Brussels, Belgium&gt;&gt; is the controller of the personal data you submit through this website and its careers pages.
         </p>
         <p class="text-secondary leading-relaxed">
-          Questions or requests: <a href="mailto:realityfoundation.info@gmail.com" class="text-primary underline underline-offset-2">realityfoundation.info@gmail.com</a>
+          Questions or requests: <a href={`mailto:${SITE.EMAIL}`} class="text-primary underline underline-offset-2">{SITE.EMAIL}</a>
         </p>
       </section>
 
@@ -43,7 +44,7 @@ import Layout from "@/layouts/Layout.astro";
             <strong class="text-foreground">No automated screening.</strong> A person reads what you send. No model decides whether you move forward.
           </p>
           <p>
-            <strong class="text-foreground">Your rights.</strong> Access, correction, deletion, portability, objection — email us at <a href="mailto:realityfoundation.info@gmail.com" class="text-primary underline underline-offset-2">realityfoundation.info@gmail.com</a>. You can also lodge a complaint with the Belgian Data Protection Authority (Gegevensbeschermingsautoriteit / Autorité de protection des données) at <a href="https://www.dataprotectionauthority.be" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-2">dataprotectionauthority.be</a>.
+            <strong class="text-foreground">Your rights.</strong> Access, correction, deletion, portability, objection — email us at <a href={`mailto:${SITE.EMAIL}`} class="text-primary underline underline-offset-2">{SITE.EMAIL}</a>. You can also lodge a complaint with the Belgian Data Protection Authority (Gegevensbeschermingsautoriteit / Autorité de protection des données) at <a href="https://www.dataprotectionauthority.be" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-2">dataprotectionauthority.be</a>.
           </p>
         </div>
       </section>
@@ -63,7 +64,7 @@ import Layout from "@/layouts/Layout.astro";
       <section class="space-y-4 border-t border-secondary pt-8">
         <h2 class="heading text-xl uppercase">Contact</h2>
         <p class="text-secondary leading-relaxed">
-          For any question about this notice or about how we handle your data: <a href="mailto:realityfoundation.info@gmail.com" class="text-primary underline underline-offset-2">realityfoundation.info@gmail.com</a>
+          For any question about this notice or about how we handle your data: <a href={`mailto:${SITE.EMAIL}`} class="text-primary underline underline-offset-2">{SITE.EMAIL}</a>
         </p>
       </section>
 

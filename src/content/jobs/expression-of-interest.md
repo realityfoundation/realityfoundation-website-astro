@@ -9,7 +9,6 @@ locations: ["Brussels", "Remote"]
 workMode: hybrid
 employmentType: "Open"
 applyMode: email
-applyEmail: "realityfoundation.info@gmail.com"
 datePosted: "2026-07-11"
 ---
 
@@ -28,7 +27,7 @@ We would especially like to hear from:
 
 ### What to send
 
-Email **realityfoundation.info@gmail.com**. No form, no portal, no account to create.
+Email us directly. No form, no portal, no account to create.
 
 - Who you are, in your own words. Not a cover letter — we can tell.
 - What you would want to own here, and why it matters.
