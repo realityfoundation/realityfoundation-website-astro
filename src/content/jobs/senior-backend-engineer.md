@@ -1,40 +1,43 @@
 ---
-title: "Senior Backend Engineer — Provenance Infrastructure"
-summary: "Own the pipeline that turns a photograph into a proof."
+title: "Blockchain / Backend Engineer"
+summary: "Build the pipeline that turns a camera event into a verifiable proof"
 kind: role
 team: Engineering
-status: closed
+status: open
 order: 1
 locations: ["Brussels", "Remote"]
 workMode: hybrid
 employmentType: "Full-time, permanent"
-salaryMin: 70000
-salaryMax: 90000
+salaryMin: 35000
+salaryMax: 55000
 salaryCurrency: EUR
 salaryPeriod: year
 applyMode: form
 websiteFields: ["linkedin", "github", "scholar", "x"]
 datePosted: "2026-07-11"
-workingSession: "Ninety minutes pairing on a real problem from our pipeline, or a four-hour take-home — your choice, and we mean that. Paid either way. No whiteboard algorithms, no reversing a linked list."
+workingSession: "You get a simplified media-to-certificate flow plus a reliability incident, then walk us through the changes you would make and why in a paid session"
 ---
 
-## Your responsibilities
+## Must-have technical skills
 
-- **Own the certification pipeline, end to end.** Ingest the raw capture and its metadata, canonicalise it, hash it, sign it, anchor it. If it is slow or wrong, it is yours.
-- **Design the anchoring layer.** Batching, Merkle trees, chain selection, and the honest trade-off between cost, latency, and finality. There is no free lunch here and we'd rather you say so out loud.
-- **Build and run our IPFS layer.** Pinning strategy, redundancy, retrieval guarantees — and a real answer for what happens when a node disappears.
-- **Make our certificates emit valid C2PA Content Credentials natively**, and keep us aligned with the spec as it moves under us.
-- **Ship the verification API** that insurers wire into their claims systems. It has to be boring, fast, and never wrong.
-- **Make it operable.** Observability, SLOs, and an on-call rotation that doesn't ruin anyone's weekend.
-- **Work in the open.** The repository is the product. Write code that survives being read by strangers who are hoping to find a flaw.
+- Solid experience with Bitcoin blockchain workflows and OpenTimestamps-based anchoring
+- Hands-on experience building and maintaining cryptographic hashing pipelines
+- Familiarity with IPFS and decentralized storage workflows
+- Backend development proficiency (Go, Rust, or Python preferred)
+- Experience designing and maintaining REST or gRPC APIs
+- Understanding of C2PA or related content provenance standards is a plus
 
-## What we look for
+## What you bring
 
-- 5+ years building backend systems that other people depended on, with real ownership — not just tickets.
-- Strong in Go, Rust, TypeScript, or Python, and pragmatic about the rest.
-- You have worked with cryptographic primitives — hashing, signatures, key handling — and you know where the sharp edges are.
-- Distributed-systems instincts: idempotency, failure modes, replay, and a clear-eyed view of what "immutable" actually costs.
-- You think in threat models, not just happy paths.
-- You can explain a design decision to someone who will never read the code.
+- You care about technical correctness and do not like shipping systems you do not fully understand
+- You can work autonomously in an early-stage environment with incomplete specs and high ambiguity
+- You communicate clearly with non-technical teammates and explain trade-offs in plain language
+- You share our belief that media integrity is a public good worth protecting
 
-**Useful, not required:** C2PA or content credentials, IPFS or content-addressed storage, on-chain anchoring at scale, enterprise or claims-system integration, open-source maintainership.
+## What you'll do
+
+- Own the end-to-end hashing and certification pipeline from media capture to Bitcoin/OpenTimestamps record
+- Design and implement IPFS-based storage architecture for certified media
+- Build and maintain backend infrastructure that connects capture clients to the certification layer
+- Contribute to the open-source codebase and document architecture decisions clearly
+- Work closely with security and product to keep the pipeline correct, auditable, and resilient

@@ -1,39 +1,45 @@
 ---
-title: "Security Engineer — Applied Cryptography"
-summary: "If our certificate can be forged, nothing else we do matters."
+title: "Security Engineer"
+summary: "Own the security model behind our proof-of-reality pipeline"
 kind: role
 team: Security
-status: closed
+status: open
 order: 2
 locations: ["Brussels", "Remote"]
 workMode: hybrid
 employmentType: "Full-time, permanent"
-salaryMin: 75000
-salaryMax: 95000
+salaryMin: 38000
+salaryMax: 55000
 salaryCurrency: EUR
 salaryPeriod: year
 applyMode: form
 websiteFields: ["linkedin", "github", "scholar", "x"]
 datePosted: "2026-07-11"
-workingSession: "We hand you our capture-to-certificate flow and three hours. You tell us how you would defeat it. Paid, and we act on what you find — whether or not we hire you."
+workingSession: "In a paid threat-modeling session, we walk through our device-to-certificate flow and you identify attack surfaces, priorities, and first controls"
 ---
 
-## Your responsibilities
+## Must-have technical skills
 
-- **Own the trust model.** Every claim we make about a media record rests on it. This is the job.
-- **Design key management and signing.** Device attestation, hardware-backed keys, rotation, revocation, HSM and KMS.
-- **Threat-model the capture path, end to end.** Rooted devices, emulators, injected camera feeds, replay, re-photography, screen capture. Then break it yourself, before someone with a motive does.
-- **Build the adversarial test suite** that attacks our own pipeline continuously, and keep it in CI where it can fail a build.
-- **Take us through the assurance our buyers demand** — &lt;&lt;ISO 27001 / SOC 2&gt;&gt;, plus the NIS2- and DORA-shaped diligence that arrives with every insurance contract.
-- **Run coordinated disclosure and external audits.** In public, with the findings published.
-- **Show up where the standards are still being written** — C2PA, and the eIDAS trust frameworks around it. Better to shape the rule than to comply with it.
+- Strong foundations in applied cryptography: hashing, digital signatures, and public-key infrastructure
+- Experience with threat modeling (STRIDE or equivalent), ideally for mobile-to-backend or mobile-to-blockchain systems
+- Familiarity with GDPR-by-design and data minimization principles
+- Knowledge of secure mobile environments (TEE, Secure Enclave, hardware-backed key storage)
+- Experience conducting or supporting security audits of software systems
+- Familiarity with zero-trust architecture principles is a plus
+- Knowledge of C2PA or content credential standards is a plus
 
-## What we look for
+## What you bring
 
-- 4+ years in security engineering, appsec, or applied cryptography.
-- Hands-on with PKI, signing infrastructure, key management, secure enclaves, or mobile attestation (Play Integrity, App Attest).
-- You have threat-modelled a system with a funded, motivated adversary — and explained the model to a non-technical decision-maker without losing them.
-- You can read a specification and find what it doesn't say.
-- You are comfortable with a security model that has to survive publication. Obscurity is not available to us and we wouldn't want it.
+- You are proactive and identify what can fail before it does
+- You translate technical risk into clear language for non-technical stakeholders
+- You are comfortable owning security decisions in a lean engineering environment
+- You believe privacy and user sovereignty are non-negotiable design requirements
 
-**Useful, not required:** mobile or camera-pipeline security, C2PA, published research or CVEs, ISO 27001 / SOC 2 audit experience, familiarity with NIS2, DORA, or eIDAS.
+## What you'll do
+
+- Define and own the cryptographic architecture of the RealityCheck pipeline
+- Conduct end-to-end threat modeling across device, app, backend, blockchain, and storage layers
+- Ensure GDPR compliance is embedded in system design from day one
+- Review code for security vulnerabilities and support remediation with engineering
+- Document security assumptions transparently in support of open-source trust
+- Advise on blockchain choices and smart contract security where relevant

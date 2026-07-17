@@ -29,9 +29,9 @@ We would especially like to hear from:
 
 Email us directly. No form, no portal, no account to create.
 
-- Who you are, in your own words. Not a cover letter — we can tell.
-- What you would want to own here, and why it matters.
-- Something you made. Code, writing, a product, a paper, a campaign. Anything with your fingerprints on it.
+- Who you are, in your own words. Not a cover letter — we can tell
+- What you would want to own here, and why it matters
+- Something you made. Code, writing, a product, a paper, a campaign. Anything with your fingerprints on it
 
 ### What happens next
 
