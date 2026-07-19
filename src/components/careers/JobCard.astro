@@ -34,15 +34,8 @@ const {
 const isOpen = kind === "open";
 ---
 
-<article class:list={["jc-card", { "jc-card--open": isOpen }]}>
+<div class:list={["jc-card", { "jc-card--open": isOpen }]}>
   <div class="jc-body">
-    {
-      isOpen && (
-        <span class="jc-open-badge" aria-label="Expression of interest — not a vacancy">
-          Expression of interest
-        </span>
-      )
-    }
     <h2 class="jc-title">
       <a href={`/careers/${slug}`} class="jc-link">{title}</a>
     </h2>
@@ -63,7 +56,7 @@ const isOpen = kind === "open";
     }
   </div>
   <div class="jc-arrow" aria-hidden="true">→</div>
-</article>
+</div>
 
 <style>
   .jc-card {
@@ -97,21 +90,6 @@ const isOpen = kind === "open";
     flex-direction: column;
     gap: 0.5rem;
     min-width: 0;
-  }
-
-  .jc-open-badge {
-    display: inline-block;
-    font-family: var(--font-geist);
-    font-size: 0.5625rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-secondary);
-    border: 1px solid var(--color-secondary);
-    border-radius: 9999px;
-    padding: 0.1rem 0.5rem;
-    width: fit-content;
-    opacity: 0.6;
   }
 
   .jc-title {

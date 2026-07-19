@@ -20,6 +20,23 @@ const { Content } = await render(job);
 const d = job.data;
 const isRole = d.kind === "role";
 const applyEmail = d.applyEmail ?? SITE.EMAIL;
+const applySubject = encodeURIComponent(`Application - ${d.title}`);
+const applyBody = encodeURIComponent(
+  `Hi RealityFoundation team,
+
+I am applying for the ${d.title} role.
+
+Attached:
+- CV (PDF)
+- LinkedIn profile
+- Relevant links (GitHub, portfolio, publications)
+
+A short note on why this role is a fit:
+
+Best,
+[Your name]`,
+);
+const applyHref = `mailto:${applyEmail}?subject=${applySubject}&body=${applyBody}`;
 ---
 
 <Layout
@@ -36,7 +53,7 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
         ← Careers
       </a>
 
-      <div class="jd-wrap">
+      <div class="jd-wrap max-w-4xl mx-auto">
 
         <!-- Page header -->
         <header class="space-y-4 pb-8 border-b border-secondary">
@@ -56,22 +73,13 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
           )}
         </header>
 
-        <!-- Top apply CTA -->
-        {isRole && d.applyMode === "form" && (
-          <div class="pt-2">
-            <a href={`/careers/${job.id}/apply`} class="btn-primary inline-block">
-              Apply for this role
-            </a>
-          </div>
-        )}
-
         <!-- Section (a): About RealityFoundation — rendered for roles only -->
         {isRole && <AboutBlock />}
 
         <!-- Sections (b) + (c): role-specific markdown body -->
-        <article class="jd-article">
+        <div class="jd-article prose prose-neutral max-w-none">
           <Content />
-        </article>
+        </div>
 
         <!-- Section (d): What we offer — rendered for roles only -->
         {isRole && (
@@ -89,21 +97,21 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
           <SelectionProcessBlock workingSession={d.workingSession} />
         )}
 
-        <!-- Bottom CTA: apply button for form roles, mailto for email, nothing for none -->
+        <!-- Bottom CTA -->
         {d.applyMode === "form" && (
-          <div class="pt-4 border-t border-secondary">
-            <a href={`/careers/${job.id}/apply`} class="btn-primary inline-block">
+          <div class="jd-cta">
+            <a href={applyHref} class="btn-primary inline-block">
               Apply for this role
             </a>
           </div>
         )}
         {d.applyMode === "email" && (
-          <div class="pt-4 border-t border-secondary">
+          <div class="jd-cta">
             <a
-              href={`mailto:${applyEmail}`}
-              class="text-secondary hover:text-primary text-sm transition-colors underline underline-offset-2"
+              href={applyHref}
+              class="btn-primary inline-block"
             >
-              {applyEmail}
+              Apply for this role
             </a>
           </div>
         )}
@@ -127,71 +135,12 @@ const applyEmail = d.applyEmail ?? SITE.EMAIL;
     margin-right: 0;
   }
 
-  /* Prose-style heading treatment inside the markdown body */
-  .jd-article :global(h2) {
-    font-family: var(--font-plex);
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    color: var(--color-foreground);
-    margin: 2rem 0 1rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-secondary);
+  .jd-article {
+    color: var(--color-secondary);
   }
 
-  .jd-article :global(h2:first-child) {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-  }
-
-  .jd-article :global(ul) {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .jd-cta {
     display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
-
-  .jd-article :global(ul li) {
-    font-family: var(--font-geist);
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-secondary);
-    padding-left: 1.25rem;
-    position: relative;
-  }
-
-  .jd-article :global(ul li::before) {
-    content: "–";
-    position: absolute;
-    left: 0;
-    color: var(--color-secondary);
-    opacity: 0.5;
-  }
-
-  .jd-article :global(p) {
-    font-family: var(--font-geist);
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-secondary);
-    margin: 1rem 0 0;
-  }
-
-  .jd-article :global(strong) {
-    color: var(--color-foreground);
-    font-weight: 600;
-  }
-
-  .jd-article :global(em) {
-    font-style: italic;
-  }
-
-  .jd-article :global(a) {
-    color: var(--color-primary);
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    justify-content: flex-end;
   }
 </style>

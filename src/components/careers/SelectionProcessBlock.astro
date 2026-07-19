@@ -6,7 +6,9 @@ interface Props {
   workingSession?: string;
 }
 
-const { workingSession = "<<working session description>>" } = Astro.props;
+const {
+  workingSession = "A practical session based on real work you'll likely do with us",
+} = Astro.props;
 ---
 
 <section class="sp-section">
@@ -14,23 +16,23 @@ const { workingSession = "<<working session description>>" } = Astro.props;
   <p class="sp-lede">Four steps, about three weeks. You will know where you stand at every one of them.</p>
   <ol class="sp-list">
     <li>
-      <strong>1. Application review.</strong> A person reads it — no model screens you out.
-      You hear back within &lt;&lt;10&gt;&gt; working days either way.
+      <strong>Application review</strong> A person reads it — no model screens you out.
+      You hear back within 7 working days either way
     </li>
     <li>
-      <strong>2. Intro call, 30 minutes.</strong> With &lt;&lt;NAME&gt;&gt;. What you want,
-      what we're building, whether the shapes match.
+      <strong>Intro call (30 minutes)</strong> With the founding team. What you want,
+      what we're building, whether the shapes match
     </li>
     <li>
-      <strong>3. A working session.</strong> <Fragment set:html={workingSession} />
+      <strong>Working session</strong> <Fragment set:html={workingSession} />
     </li>
     <li>
-      <strong>4. The team, 2 × 45 minutes.</strong> With the people you'd actually work
-      with. Then two references.
+      <strong>Team call (45 minutes)</strong> With the people you'd actually work
+      with, then references
     </li>
   </ol>
   <p class="sp-close">
-    Decision within &lt;&lt;5&gt;&gt; working days of the last step. If it's a no, we tell
+    Decision within 7 working days of the last step. If it's a no, we tell
     you why. We know that's rare. It shouldn't be.
   </p>
 </section>
@@ -65,27 +67,18 @@ const { workingSession = "<<working session description>>" } = Astro.props;
   .sp-list {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.35rem;
     font-family: var(--font-geist);
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.38;
     color: var(--color-secondary);
-    list-style: none;
-    padding: 0;
+    list-style: decimal;
+    padding-left: 1.25rem;
     margin: 0;
   }
 
   .sp-list li {
-    padding-left: 1.25rem;
-    position: relative;
-  }
-
-  .sp-list li::before {
-    content: "–";
-    position: absolute;
-    left: 0;
-    color: var(--color-secondary);
-    opacity: 0.5;
+    padding-left: 0.25rem;
   }
 
   .sp-list strong {

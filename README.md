@@ -1,43 +1,54 @@
-# Astro Starter Kit: Minimal
+# RealityFoundation Website
 
-```sh
-npm create astro@latest -- --template minimal
+Public website for RealityFoundation, built with Astro and Tailwind.  
+This repository contains the pages, shared UI components, and careers content used on [realityfoundation.eu](https://realityfoundation.eu).
+
+## Tech stack
+
+- Astro
+- Tailwind CSS
+- TypeScript
+- Firebase Hosting
+
+## Run locally
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The dev server runs at `http://localhost:4321`.
 
-## 🚀 Project Structure
+## Useful scripts
 
-Inside of your Astro project, you'll see the following folders and files:
+- `npm run dev` - start local development server
+- `npm run build` - build production output into `dist/`
+- `npm run preview` - preview the production build locally
+- `npm run astro check` - run Astro diagnostics
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+## Where to edit things
+
+- `src/pages/` - site pages and routes
+- `src/components/` - reusable UI blocks
+- `src/content/jobs/` - careers role content (markdown frontmatter + body)
+- `src/consts.ts` - shared site metadata (title, email, etc.)
+
+## Deployment
+
+Firebase Hosting is configured in `firebase.json` (`dist` output, with `npm run build` predeploy).
+
+Preview deploy:
+
+```bash
+firebase hosting:channel:deploy demo
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Production deploy:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+firebase deploy --only hosting
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contact
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+For website updates or content changes: `realityfoundation.info@gmail.com`
