@@ -138,6 +138,14 @@ const applyHref = `mailto:${applyEmail}?subject=${applySubject}&body=${applyBody
   .jd-article {
     color: var(--color-secondary);
   }
+  
+  :global(.jd-article :is(h1, h2, h3, h4, h5, h6)) {
+    font-family: var(--font-plex);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-foreground);
+  }
 
   .jd-cta {
     display: flex;
