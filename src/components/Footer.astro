@@ -1,5 +1,7 @@
 ---
-import { SITE } from "@/consts";
+import { SITE, SOCIALS } from "@/consts";
+
+const linkedin = SOCIALS.find((social) => social.NAME === "LinkedIn");
 ---
 
 <footer class="border-secondary container mx-auto border-t px-6 py-12">
@@ -31,7 +33,7 @@ import { SITE } from "@/consts";
       >
       <span class="text-secondary/30 select-none" aria-hidden="true">·</span>
       <a
-        href="https://www.linkedin.com/company/realityfoundation-eu/about/"
+        href={linkedin?.HREF}
         target="_blank"
         rel="noopener noreferrer"
         class="hover:text-primary transition"
