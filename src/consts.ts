@@ -29,15 +29,11 @@ export const PROJECTS = {
 
 export const SOCIALS = [
   {
-    NAME: "X",
-    HREF: "https://x.com/realitychecked",
+    NAME: "LinkedIn",
+    HREF: "https://www.linkedin.com/company/realityfoundation-eu/",
   },
   {
-    NAME: "Linkedin",
-    HREF: "https://linkedin.com/",
-  },
-  {
-    NAME: "Github",
-    HREF: "https://github.com/realitycheck",
+    NAME: "GitHub",
+    HREF: "https://github.com/realityfoundation",
   },
 ];

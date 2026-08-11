@@ -14,10 +14,6 @@ import { HOME } from "@/consts";
             <section class="border-b border-secondary pb-12">
                 <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
                     <div class="space-y-2">
-                        <p class="heading text-5xl text-primary md:text-7xl">2025</p>
-                        <p class="font-geist text-sm tracking-wider text-secondary uppercase">Founded</p>
-                    </div>
-                    <div class="space-y-2">
                         <p class="heading text-5xl text-primary md:text-7xl">50k</p>
                         <p class="font-geist text-sm tracking-wider text-secondary uppercase">Images processed</p>
                     </div>
@@ -27,13 +23,25 @@ import { HOME } from "@/consts";
                             Founding members
                         </p>
                     </div>
-                    <div class="space-y-2 group cursor-pointer">
-                        <div class="flex items-center gap-2">
-                            <p class="heading text-5xl text-primary md:text-7xl">🇪🇺</p>
-                            <p class="heading text-5xl md:text-7xl group-hover:text-[#039] transition">EU</p>
+                    <div class="space-y-2">
+                        <p class="heading text-5xl text-primary md:text-7xl">2025</p>
+                        <p class="font-geist text-sm tracking-wider text-secondary uppercase">Founded</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex h-[48px] items-end md:h-[72px]">
+                            <picture class="block h-full w-full">
+                                <source srcset="/eu_cofounded_white.png" media="(prefers-color-scheme: dark)" />
+                                <img
+                                    src="/eu_cofounded_blue.png"
+                                    alt="Co-funded by the European Union"
+                                    class="h-full w-full object-contain"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                         <p class="font-geist text-sm tracking-wider text-secondary uppercase">
-                            Based in Europe
+                            Proudly European
                         </p>
                     </div>
                 </div>
