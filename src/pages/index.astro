@@ -29,20 +29,16 @@ import { HOME } from "@/consts";
                     </div>
                     <div class="space-y-2">
                         <div class="flex h-[48px] items-end md:h-[72px]">
-                            <img
-                                src="/eu_cofounded_blue.png"
-                                alt="Co-funded by the European Union"
-                                class="block h-full w-full object-contain dark:hidden"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                            <img
-                                src="/eu_cofounded_white.png"
-                                alt="Co-funded by the European Union"
-                                class="hidden h-full w-full object-contain dark:block"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture class="block h-full w-full">
+                                <source srcset="/eu_cofounded_white.png" media="(prefers-color-scheme: dark)" />
+                                <img
+                                    src="/eu_cofounded_blue.png"
+                                    alt="Co-funded by the European Union"
+                                    class="h-full w-full object-contain"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                         <p class="font-geist text-sm tracking-wider text-secondary uppercase">
                             Based in Europe
