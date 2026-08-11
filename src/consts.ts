@@ -4,7 +4,9 @@ export const SITE = {
   TITLE: "RealityFoundation",
   DESCRIPTION:
     "Establishing Ground Truth in the Age of AI. We study the boundaries between authentic and synthetic media and build the academic infrastructure to defend them.",
-  EMAIL: "realityfoundation.info@gmail.com",
+  EMAIL: "emilio.dallatorre@realityfoundation.eu",
+  REGISTRY_CODE: "80674971",
+  ADDRESS: "Tartu mnt 67/1-13b, 10115 Tallinn, Kesklinna linnaosa, Harju maakond, Estonia",
 };
 
 export const HOME = {
