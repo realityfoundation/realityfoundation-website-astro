@@ -5,7 +5,7 @@ kind: open
 team: Open
 status: open
 order: 5
-locations: ["Brussels", "Remote"]
+locations: ["Tallinn", "Remote"]
 workMode: hybrid
 employmentType: "Open"
 applyMode: email

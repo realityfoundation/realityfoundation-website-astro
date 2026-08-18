@@ -43,7 +43,7 @@ const jobs = defineCollection({
     team:           z.enum(["Engineering", "Security", "Commercial", "Strategy", "Open"]),
     status:         z.enum(["open", "coming-soon", "closed"]).default("open"),
     order:          z.number().default(0),
-    locations:      z.array(z.string()).default(["Brussels", "Remote"]),
+    locations:      z.array(z.string()).default(["Tallinn", "Remote"]),
     workMode:       z.enum(["hybrid", "remote-eu", "onsite"]).default("hybrid"),
     employmentType: z.string().default("Full-time, permanent"),
     salaryMin:      z.number().optional(),
