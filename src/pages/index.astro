@@ -8,11 +8,29 @@ import { HOME } from "@/consts";
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
     <div class="container mx-auto p-6">
         <Hero />
+        <a
+            href="https://www.eit.europa.eu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-2 inline-flex items-center gap-3 text-xs uppercase tracking-wider text-secondary transition hover:text-primary"
+        >
+            <picture class="rounded bg-white px-3 py-2">
+                <source srcset="/eu_cofounded_white.png" media="(prefers-color-scheme: dark)" />
+                <img
+                    src="/eu_cofounded_blue.png"
+                    alt="Co-funded by the European Union"
+                    class="h-6 w-auto"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </picture>
+            <span>Supported by the European Institute of Innovation & Technology</span>
+        </a>
     </div>
     <div class="container mx-auto p-6">
         <div class="space-y-16 py-12">
             <section class="border-b border-secondary pb-12">
-                <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
                     <div class="space-y-2">
                         <p class="heading text-5xl text-primary md:text-7xl">50k</p>
                         <p class="font-geist text-sm tracking-wider text-secondary uppercase">Images processed</p>
@@ -26,23 +44,6 @@ import { HOME } from "@/consts";
                     <div class="space-y-2">
                         <p class="heading text-5xl text-primary md:text-7xl">2025</p>
                         <p class="font-geist text-sm tracking-wider text-secondary uppercase">Founded</p>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex h-[48px] items-end md:h-[72px]">
-                            <picture class="block h-full w-full">
-                                <source srcset="/eu_cofounded_white.png" media="(prefers-color-scheme: dark)" />
-                                <img
-                                    src="/eu_cofounded_blue.png"
-                                    alt="Co-funded by the European Union"
-                                    class="h-full w-full object-contain"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                            </picture>
-                        </div>
-                        <p class="font-geist text-sm tracking-wider text-secondary uppercase">
-                            Proudly European
-                        </p>
                     </div>
                 </div>
             </section>
@@ -329,23 +330,6 @@ import { HOME } from "@/consts";
                          </p>
                          <p class="text-sm font-semibold text-primary uppercase">Discover more →</p>
                      </a>
-                </div>
-            </section>
-
-            <!-- C2PA Contributor Section -->
-            <section class="space-y-6 border-t border-secondary pt-12">
-                <div class="flex flex-col items-center gap-8 rounded-2xl border border-secondary p-8 md:flex-row md:p-12">
-                    <a href="https://c2pa.org" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 rounded-lg bg-white p-6 transition hover:opacity-90">
-                        <img src="/c2pa-logo.svg" alt="C2PA — Coalition for Content Provenance and Authenticity" class="h-12 w-auto md:h-14" />
-                    </a>
-                    <div class="flex-1 space-y-4 text-center md:text-left">
-                        <p class="font-geist text-secondary text-sm uppercase tracking-wider">Standards & Partnerships</p>
-                        <h2 class="heading text-3xl uppercase md:text-4xl">We're proud contributors to C2PA</h2>
-                        <p class="leading-relaxed text-secondary">
-                            RealityFoundation is a contributing member of the Coalition for Content Provenance and Authenticity (C2PA) — the open technical standard behind Content Credentials, developed alongside Adobe, Amazon, BBC, Google, Microsoft, and OpenAI. Our capture-to-certificate pipeline is built to be natively interoperable with the C2PA specification.
-                        </p>
-                        <a href="https://c2pa.org" target="_blank" rel="noopener noreferrer" class="inline-block text-sm font-semibold text-primary uppercase hover:underline">Learn about C2PA →</a>
-                    </div>
                 </div>
             </section>
 
