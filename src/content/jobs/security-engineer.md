@@ -5,7 +5,7 @@ kind: role
 team: Security
 status: open
 order: 2
-locations: ["Brussels", "Remote"]
+locations: ["Tallinn", "Remote"]
 workMode: hybrid
 employmentType: "Full-time, permanent"
 salaryMin: 38000

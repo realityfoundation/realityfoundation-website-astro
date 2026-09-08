@@ -5,7 +5,7 @@ kind: role
 team: Strategy
 status: open
 order: 4
-locations: ["Brussels", "Remote"]
+locations: ["Tallinn", "Remote"]
 workMode: hybrid
 employmentType: "Full-time, permanent"
 salaryMin: 35000

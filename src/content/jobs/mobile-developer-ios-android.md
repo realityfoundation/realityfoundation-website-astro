@@ -5,7 +5,7 @@ kind: role
 team: Engineering
 status: open
 order: 3
-locations: ["Brussels", "Remote"]
+locations: ["Tallinn", "Remote"]
 workMode: hybrid
 employmentType: "Full-time, permanent"
 salaryMin: 36000
