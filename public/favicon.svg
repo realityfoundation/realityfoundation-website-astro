@@ -1,10 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
    <rect width="64" height="64" fill="#d90368"/>
-   <text x="50%" y="54%"
-         text-anchor="middle"
-         dominant-baseline="middle"
-         font-family="'IBM Plex Mono', monospace"
-         font-weight="700"
-         font-size="30"
-         fill="#ffffff">RF</text>
+   <!-- "RF" outlined as vector paths (IBM Plex Mono Bold) so the favicon renders
+        identically everywhere without depending on the browser having access to
+        the page's web font (favicons are rendered outside the page context). -->
+   <path transform="translate(16.529 42.121) scale(0.029 -0.029)" fill="#ffffff" d="M224 0H76V698H346Q397 698 437.0 682.5Q477 667 504.5 638.0Q532 609 546.0 568.0Q560 527 560 476Q560 402 528.0 349.0Q496 296 437 279L574 0H410L293 259H224ZM310 375Q363 375 383.5 395.0Q404 415 404 461V491Q404 537 383.5 557.0Q363 577 310 577H224V375ZM680 0V698H1143V575H830V415H1110V292H830V0Z"/>
  </svg>
