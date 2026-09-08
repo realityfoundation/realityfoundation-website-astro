@@ -8,24 +8,6 @@ import { HOME } from "@/consts";
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
     <div class="container mx-auto p-6">
         <Hero />
-        <a
-            href="https://www.eit.europa.eu/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-2 inline-flex items-center gap-3 text-xs uppercase tracking-wider text-secondary transition hover:text-primary"
-        >
-            <picture class="rounded bg-white px-3 py-2">
-                <source srcset="/eu_cofounded_white.png" media="(prefers-color-scheme: dark)" />
-                <img
-                    src="/eu_cofounded_blue.png"
-                    alt="Co-funded by the European Union"
-                    class="h-6 w-auto"
-                    loading="lazy"
-                    decoding="async"
-                />
-            </picture>
-            <span>Supported by the European Institute of Innovation & Technology</span>
-        </a>
     </div>
     <div class="container mx-auto p-6">
         <div class="space-y-16 py-12">
